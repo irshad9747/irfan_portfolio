@@ -5,25 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Irfan | Business Growth Consultant & Entrepreneur</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="msapplication-TileColor" content="#0a0a0a" />
+    
     <!-- SEO & Meta Tags -->
     <meta name="description" content="Irfan is a Business Growth Consultant and Entrepreneur helping businesses increase sales with innovative marketing & sales systems." />
-    <meta name="robots" content="max-image-preview:large" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="IRFAN - Business Consultant" />
+    <meta name="keywords" content="business consultant, growth consultant, marketing automation, sales systems, business growth, digital marketing, lead conversion, Calicut, India" />
+    <meta name="author" content="Irfan" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://irfan.in" />
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://irfan.in" />
     <meta property="og:title" content="Irfan | Business Growth Consultant" />
     <meta property="og:description" content="Helping businesses increase sales with innovative marketing & sales systems." />
+    <meta property="og:image" content="https://irfan.in/portrait.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="IRFAN - Business Consultant" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Irfan | Business Growth Consultant" />
+    <meta name="twitter:description" content="Helping businesses increase sales with innovative marketing & sales systems." />
+    <meta name="twitter:image" content="https://irfan.in/portrait.png" />
+    
+    <!-- Resource Hints -->
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="noopener" />
     
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
 
     <script>
         tailwind.config = {
@@ -173,6 +201,35 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        /* Lazy Loading Images */
+        img[loading="lazy"] {
+            opacity: 0;
+        }
+        
+        img.loaded {
+            opacity: 1;
+        }
+        
+        /* Performance: GPU acceleration for animations */
+        .card-hover,
+        .btn-primary,
+        .reveal {
+            will-change: transform;
+        }
+        
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
         }
         
         /* Enhanced Focus States for Accessibility */
@@ -208,17 +265,20 @@
             box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
         }
         
-        /* Loading Animation for Images */
-        img {
-            transition: opacity 0.3s ease-in-out;
+        /* Skip to content link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #d4af37;
+            color: #000;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
         }
         
-        img[loading="lazy"] {
-            opacity: 0;
-        }
-        
-        img.loaded {
-            opacity: 1;
+        .skip-link:focus {
+            top: 0;
         }
         
         /* Improved Mobile Menu Animation */
@@ -271,97 +331,154 @@
         section {
             scroll-margin-top: 100px;
         }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            /* Better mobile spacing */
+            section {
+                scroll-margin-top: 80px;
+            }
+            
+            /* Reduce text glow on mobile for better performance */
+            .text-glow-strong {
+                text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            }
+            
+            /* Better touch targets */
+            a, button {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            /* Improved mobile card spacing */
+            .card-hover {
+                margin-bottom: 1rem;
+            }
+        }
+        
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            /* Even tighter spacing on very small screens */
+            .bg-pattern {
+                background-size: 20px 20px;
+            }
+        }
     </style>
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Irfan",
+        "jobTitle": "Business Growth Consultant",
+        "description": "Business Growth Consultant and Entrepreneur helping businesses increase sales with innovative marketing & sales systems.",
+        "url": "https://irfan.in",
+        "sameAs": [
+            "https://www.facebook.com",
+            "https://www.twitter.com",
+            "https://www.instagram.com",
+            "https://www.linkedin.com",
+            "https://www.youtube.com"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Calicut",
+            "addressCountry": "IN"
+        },
+        "email": "contact@irfan.com",
+        "telephone": "+919876543210"
+    }
+    </script>
 </head>
 <body class="font-sans text-txt-main antialiased bg-page selection:bg-accent selection:text-black">
-
     <!-- Top Bar -->
     <div class="bg-black text-txt-sub py-3 border-b border-white/10 hidden md:block">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm font-medium tracking-wide">
             <div class="flex items-center space-x-6">
-                <a href="tel:+919876543210" class="hover:text-accent transition-colors flex items-center gap-2">
-                    <i class="fas fa-phone-alt text-accent"></i> +91 98765 43210
+                <a href="tel:+919876543210" class="hover:text-accent transition-colors flex items-center gap-2" aria-label="Call Irfan at +91 98765 43210">
+                    <i class="fas fa-phone-alt text-accent" aria-hidden="true"></i> <span>+91 98765 43210</span>
                 </a>
-                <a href="mailto:contact@irfan.com" class="hover:text-accent transition-colors flex items-center gap-2">
-                    <i class="fas fa-envelope text-accent"></i> contact@irfan.com
+                <a href="mailto:contact@irfan.com" class="hover:text-accent transition-colors flex items-center gap-2" aria-label="Email Irfan at contact@irfan.com">
+                    <i class="fas fa-envelope text-accent" aria-hidden="true"></i> <span>contact@irfan.com</span>
                 </a>
             </div>
-            <div class="flex items-center space-x-5">
-                <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-youtube"></i></a>
-            </div>
+            <nav class="flex items-center space-x-5" aria-label="Social media links">
+                <a href="https://www.facebook.com" target="_blank" class="hover:text-accent transition-colors" aria-label="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="https://www.twitter.com" target="_blank" class="hover:text-accent transition-colors" aria-label="Twitter" rel="noopener noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com" target="_blank" class="hover:text-accent transition-colors" aria-label="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" class="hover:text-accent transition-colors" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="https://www.youtube.com" target="_blank" class="hover:text-accent transition-colors" aria-label="YouTube" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+            </nav>
         </div>
     </div>
 
     <!-- Navigation -->
     <nav class="sticky top-0 w-full z-50 bg-page/90 backdrop-blur-md border-b border-white/5 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
+            <div class="flex justify-between h-16 md:h-20 items-center">
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="font-heading text-3xl font-bold tracking-tight text-white">
-                        IRFAN<span class="text-accent">.in</span>
+                    <a href="#hero" class="font-heading text-2xl md:text-3xl font-bold tracking-tight text-white" aria-label="Irfan.in - Home">
+                        IRFAN<span class="text-accent">.</span>
                     </a>
                 </div>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 items-center">
+                <nav class="hidden md:flex space-x-8 items-center" aria-label="Main navigation">
                     <a href="#hero" class="link-underline text-sm font-bold uppercase tracking-wider text-txt-sub hover:text-white pb-1 transition-all">Home</a>
                     <a href="#about" class="link-underline text-sm font-bold uppercase tracking-wider text-txt-sub hover:text-white pb-1 transition-all">About</a>
                     <a href="#services" class="link-underline text-sm font-bold uppercase tracking-wider text-txt-sub hover:text-white pb-1 transition-all">Services</a>
                     <a href="#contact" class="btn-primary px-6 py-3 rounded-sm border border-accent/50 bg-transparent text-accent text-sm font-bold uppercase tracking-widest hover:bg-accent hover:text-black transition-all duration-300 border-glow">
                         Book Consultation
                     </a>
-                </div>
+                </nav>
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-white hover:text-accent focus:outline-none transition-colors duration-300 p-2 rounded-md hover:bg-white/10">
-                        <i class="fas fa-bars text-2xl transition-transform duration-300" id="menu-icon"></i>
+                    <button id="mobile-menu-btn" class="text-white hover:text-accent focus:outline-none transition-colors duration-300 p-2 rounded-md hover:bg-white/10" aria-label="Toggle mobile menu" aria-expanded="false">
+                        <i class="fas fa-bars text-2xl transition-transform duration-300" id="menu-icon" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-surface/98 backdrop-blur-md border-t border-white/10 absolute w-full shadow-2xl">
+        <nav id="mobile-menu" class="hidden md:hidden bg-surface/98 backdrop-blur-md border-t border-white/10 absolute w-full shadow-2xl" aria-label="Mobile navigation">
             <div class="px-4 pt-2 pb-6 space-y-1">
                 <a href="#hero" class="block px-3 py-3 border-b border-white/5 text-base font-medium text-gray-300 hover:text-accent hover:bg-white/5 transition-all duration-200 rounded-md">Home</a>
                 <a href="#about" class="block px-3 py-3 border-b border-white/5 text-base font-medium text-gray-300 hover:text-accent hover:bg-white/5 transition-all duration-200 rounded-md">About</a>
                 <a href="#services" class="block px-3 py-3 border-b border-white/5 text-base font-medium text-gray-300 hover:text-accent hover:bg-white/5 transition-all duration-200 rounded-md">Services</a>
                 <a href="#contact" class="block px-3 py-3 mt-4 text-center bg-accent text-black font-bold uppercase tracking-wider hover:bg-accent-light transition-all duration-300 rounded-md border-glow">Book Consultation</a>
             </div>
-        </div>
+        </nav>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative pt-20 pb-20 lg:pt-32 lg:pb-28 overflow-hidden bg-page">
+    <section id="hero" class="relative pt-12 pb-12 sm:pt-16 sm:pb-16 md:pt-20 md:pb-20 lg:pt-32 lg:pb-28 overflow-hidden bg-page">
         <!-- Background Decorations -->
         <div class="absolute top-0 left-0 w-full h-full -z-10 bg-pattern"></div>
         <!-- Ambient Glow -->
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
                 <!-- Text Content -->
-                <div class="space-y-8 animate-fade-in-up order-2 lg:order-1 reveal">
+                <div class="space-y-6 sm:space-y-8 animate-fade-in-up order-2 lg:order-1 reveal">
                     <div class="inline-block border-b-2 border-accent pb-1">
                          <span class="text-accent font-bold uppercase tracking-widest text-xs">Business Growth Consultant</span>
                     </div>
 
-                    <h1 class="font-heading text-4xl lg:text-6xl xl:text-7xl font-normal leading-tight text-white text-glow-strong">
+                    <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal leading-tight text-white text-glow-strong">
                         Entrepreneur & <br>
                         <span class="italic text-gray-400">Visionary</span>
                     </h1>
                     
-                    <p class="text-lg lg:text-xl text-txt-sub max-w-lg leading-relaxed font-light">
+                    <p class="text-base sm:text-lg lg:text-xl text-txt-sub max-w-lg leading-relaxed font-light">
                         Helping businesses increase sales with innovative marketing & sales systems.
                     </p>
 
                     <!-- Process Flow Visual - Refined -->
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm font-bold text-white py-4">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 text-xs sm:text-sm font-bold text-white py-3 sm:py-4">
                         <div class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Leads</div>
                         <div class="hidden sm:block text-accent">→</div>
                         <div class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Follow-up</div>
@@ -369,43 +486,40 @@
                         <div class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Conversion</div>
                     </div>
 
-                    <div class="border-l-2 border-accent pl-6 py-2 bg-gradient-to-r from-surface to-transparent hover:border-accent-light transition-colors duration-300">
-                        <p class="text-xl lg:text-2xl font-heading text-white italic">
+                    <blockquote class="border-l-2 border-accent pl-4 sm:pl-6 py-2 bg-gradient-to-r from-surface to-transparent hover:border-accent-light transition-colors duration-300">
+                        <p class="text-lg sm:text-xl lg:text-2xl font-heading text-white italic">
                             "Most businesses generate leads but fail to convert them — I make sure yours don't."
                         </p>
-                    </div>
+                    </blockquote>
 
-                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <a href="#contact" class="btn-primary inline-flex justify-center items-center px-8 py-4 text-sm font-bold uppercase tracking-widest text-black bg-accent hover:bg-white transition-all duration-300 group shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] border-glow">
-                            Book a Consultation
-                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                        </a>
-                        <a href="#about" class="inline-flex justify-center items-center px-8 py-4 text-sm font-bold uppercase tracking-widest text-white border border-white/20 hover:border-accent hover:text-accent transition-all duration-300 bg-transparent hover:bg-white/5">
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
+                    <a href="#contact" class="btn-primary inline-flex justify-center items-center px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-black bg-accent hover:bg-white transition-all duration-300 group shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] border-glow w-full sm:w-auto">
+                        Book a Consultation
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                    </a>
+                        <a href="#about" class="inline-flex justify-center items-center px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-white border border-white/20 hover:border-accent hover:text-accent transition-all duration-300 bg-transparent hover:bg-white/5 w-full sm:w-auto">
                             Learn More
                         </a>
                     </div>
                 </div>
 
                 <!-- Image Placeholder -->
-                <div class="order-1 lg:order-2 relative lg:h-[600px] flex items-center justify-center reveal animate-slide-in-right">
-                    <div class="relative w-full max-w-md mx-auto aspect-[4/5] bg-surface2 rounded-sm overflow-hidden border border-white/10 shadow-2xl group hover:border-accent/50 transition-all duration-500">
+                <div class="order-1 lg:order-2 relative lg:h-[600px] flex items-center justify-center mb-8 sm:mb-0 reveal animate-slide-in-right">
+                    <div class="relative w-full max-w-sm sm:max-w-md mx-auto aspect-[4/5] bg-surface2 rounded-sm overflow-hidden border border-white/10 shadow-2xl group hover:border-accent/50 transition-all duration-500">
                         <!-- Placeholder Content -->
                         <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-600 bg-surface overflow-hidden">
-                            <img src="portrait.png" alt="Irfan - Business Growth Consultant" class="group-hover:scale-105 transition-transform duration-700">
-                            <!-- <i class="fas fa-user-tie text-6xl mb-4 text-gray-700"></i>
-                            <span class="font-heading text-lg text-gray-400">Irfan's Portrait</span>
-                            <span class="text-xs mt-2 text-gray-600 font-sans">Dark & Moody Portrait Recommended</span> -->
+                            <img src="portrait.png" alt="Irfan - Business Growth Consultant" fetchpriority="high" decoding="async" class="group-hover:scale-105 transition-transform duration-700">
                         </div>
                         
                         <!-- Floating Card Decoration -->
-                        <div class="absolute bottom-6 left-6 right-6 bg-black/90 backdrop-blur-md p-6 border border-white/10 shadow-xl hover:border-accent/50 transition-all duration-300 group-hover:scale-105">
+                        <div class="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 bg-black/90 backdrop-blur-md p-4 sm:p-6 border border-white/10 shadow-xl hover:border-accent/50 transition-all duration-300 group-hover:scale-105">
                             <div class="flex items-center justify-between">
                                 <div>
-                                    <p class="font-heading text-3xl font-bold text-white text-glow">100+</p>
+                                    <p class="font-heading text-2xl sm:text-3xl font-bold text-white text-glow">100+</p>
                                     <p class="text-xs uppercase tracking-widest text-accent mt-1">Businesses Scaled</p>
                                 </div>
-                                <div class="h-10 w-10 rounded-full bg-accent flex items-center justify-center text-black group-hover:rotate-12 transition-transform duration-300">
-                                    <i class="fas fa-arrow-trend-up"></i>
+                                <div class="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-accent flex items-center justify-center text-black group-hover:rotate-12 transition-transform duration-300" aria-hidden="true">
+                                    <i class="fas fa-arrow-trend-up text-sm sm:text-base"></i>
                                 </div>
                             </div>
                         </div>
@@ -413,65 +527,64 @@
                     
                     <!-- Decorative Frame -->
                     <div class="absolute -z-10 top-10 -right-6 w-full h-full border-2 border-accent/20 hidden lg:block"></div>
-                    <div class="absolute -z-10 -bottom-10 -left-6 w-40 h-40 bg-accent/10 rounded-full blur-3xl"></div>
+                    <div class="absolute -z-10 -bottom-10 -left-6 w-32 h-32 sm:w-40 sm:h-40 bg-accent/10 rounded-full blur-3xl"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 lg:py-28 bg-surface border-t border-white/5">
+    <section id="about" class="py-12 sm:py-16 md:py-20 lg:py-28 bg-surface border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
                 
                 <!-- Image/Visual Column -->
-                <div class="relative">
+                <div class="relative order-2 lg:order-1">
                     <div class="relative w-full aspect-square max-w-lg mx-auto">
                         <!-- Main Image Placeholder -->
-                        <div class="absolute inset-0 bg-surface2 border border-white/5 flex flex-col items-center justify-center text-gray-500">
-                             <i class="fas fa-laptop-code text-5xl mb-4 text-gray-600"></i>
-                             <span class="font-heading">Workspace / Action Shot</span>
+                        <div class="absolute inset-0 bg-surface2 border border-white/5 flex flex-col items-center justify-center text-gray-500 overflow-hidden">
+                             <img src="Untitled-design-2-2.webp" alt="Irfan's workspace showing business growth systems and automation tools" loading="lazy" decoding="async" class="object-cover w-full h-full">
                         </div>
                         
                         <!-- Location Badge -->
-                        <div class="absolute -bottom-6 -left-6 bg-black p-6 shadow-2xl border border-white/10 flex items-center space-x-4">
-                            <div class="text-accent">
-                                <i class="fas fa-map-marker-alt text-2xl"></i>
+                        <div class="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-black p-4 sm:p-6 shadow-2xl border border-white/10 flex items-center space-x-3 sm:space-x-4">
+                            <div class="text-accent" aria-hidden="true">
+                                <i class="fas fa-map-marker-alt text-xl sm:text-2xl"></i>
                             </div>
                             <div>
                                 <p class="text-xs text-gray-500 font-bold uppercase tracking-widest">Based In</p>
-                                <p class="text-lg font-heading font-bold text-white">Calicut, India</p>
+                                <address class="text-base sm:text-lg font-heading font-bold text-white not-italic">Calicut, India</address>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Text Content Column -->
-                <div class="space-y-8">
+                <div class="space-y-6 sm:space-y-8 order-1 lg:order-2">
                     <div class="space-y-2">
                         <h4 class="text-accent font-bold tracking-widest uppercase text-xs">Who is Irfan?</h4>
-                        <h2 class="font-heading text-3xl lg:text-4xl xl:text-5xl text-white">About Irfan – Your Business Growth Partner</h2>
+                        <h2 class="font-heading text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white">About Irfan – Your Business Growth Partner</h2>
                         <div class="w-20 h-0.5 bg-accent"></div>
                     </div>
 
-                    <div class="prose prose-lg text-txt-sub font-light">
-                        <p class="font-medium text-white text-lg">
-                            Hi, I’m Irfan, from Calicut, India. I help business owners increase sales by creating complete business growth systems.
+                    <div class="prose prose-lg text-txt-sub font-light text-sm sm:text-base">
+                        <p class="font-medium text-white text-base sm:text-lg">
+                            Hi, I'm Irfan, from Calicut, India. I help business owners increase sales by creating complete business growth systems.
                         </p>
                         <p>
                             Unlike traditional digital marketers who focus only on content or ads, I combine <strong class="text-accent font-normal">strategy, marketing, and automation</strong> to turn leads into predictable revenue.
                         </p>
                         <p>
-                            Most businesses get leads but fail to convert them into sales because there is no proper follow-up system in place. That’s where I step in — I design systems that maximize conversion and increase revenue.
+                            Most businesses get leads but fail to convert them into sales because there is no proper follow-up system in place. That's where I step in — I design systems that maximize conversion and increase revenue.
                         </p>
                         <p>
                             With proven business setup experience, every system I create is tailored to your business, scalable, and results-driven.
                         </p>
                     </div>
 
-                    <div class="pt-6">
-                        <a href="#contact" class="text-white font-bold hover:text-accent transition-colors inline-flex items-center uppercase tracking-widest text-sm group">
-                            Let's Talk Business <i class="fas fa-long-arrow-alt-right ml-3 text-accent transform group-hover:translate-x-2 transition-transform"></i>
+                    <div class="pt-4 sm:pt-6">
+                        <a href="#contact" class="text-white font-bold hover:text-accent transition-colors inline-flex items-center uppercase tracking-widest text-xs sm:text-sm group">
+                            Let's Talk Business <i class="fas fa-long-arrow-alt-right ml-3 text-accent transform group-hover:translate-x-2 transition-transform" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -480,86 +593,101 @@
     </section>
 
     <!-- Services Overview -->
-    <section id="services" class="py-24 bg-page relative">
+    <section id="services" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-page relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16">
                 <span class="text-accent font-bold tracking-widest uppercase text-xs">Expertise</span>
-                <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl mt-3 mb-6 text-white text-glow-strong">How I Help You Win</h2>
+                <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-3 mb-4 sm:mb-6 text-white text-glow-strong">How I Help You Win</h2>
                 <div class="w-12 h-0.5 bg-accent mx-auto"></div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Card 1 -->
-                <div class="card-hover bg-surface p-10 border border-white/5 hover:border-accent/30 group reveal">
-                    <div class="text-accent text-3xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border border-white/5 hover:border-accent/30 group reveal">
+                    <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
                         <i class="fas fa-chess-knight"></i>
                     </div>
-                    <h3 class="font-heading text-xl lg:text-2xl font-bold text-white mb-4">Strategic Planning</h3>
-                    <p class="text-txt-sub font-light leading-relaxed text-base">Tailored roadmaps that align with your business goals, ensuring every marketing effort drives real growth.</p>
-                </div>
+                    <h3 class="font-heading text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 sm:mb-4">Strategic Planning</h3>
+                    <p class="text-txt-sub font-light leading-relaxed text-sm sm:text-base">Tailored roadmaps that align with your business goals, ensuring every marketing effort drives real growth.</p>
+                </article>
 
                 <!-- Card 2 -->
-                <div class="card-hover bg-surface p-10 border-t-4 border-accent hover:border-t-accent hover:border-white/20 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] group reveal">
-                    <div class="text-accent text-3xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border-t-4 border-accent hover:border-t-accent hover:border-white/20 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] group reveal">
+                    <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
                         <i class="fas fa-cogs"></i>
                     </div>
-                    <h3 class="font-heading text-xl lg:text-2xl font-bold text-white mb-4">Automation Systems</h3>
-                    <p class="text-txt-sub font-light leading-relaxed text-base">Building robust follow-up machines that nurture leads automatically, so you never miss a sale.</p>
-                </div>
+                    <h3 class="font-heading text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 sm:mb-4">Automation Systems</h3>
+                    <p class="text-txt-sub font-light leading-relaxed text-sm sm:text-base">Building robust follow-up machines that nurture leads automatically, so you never miss a sale.</p>
+                </article>
 
                 <!-- Card 3 -->
-                <div class="card-hover bg-surface p-10 border border-white/5 hover:border-accent/30 group reveal">
-                    <div class="text-accent text-3xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border border-white/5 hover:border-accent/30 group reveal">
+                    <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
                         <i class="fas fa-chart-pie"></i>
                     </div>
-                    <h3 class="font-heading text-xl lg:text-2xl font-bold text-white mb-4">Revenue Optimization</h3>
-                    <p class="text-txt-sub font-light leading-relaxed text-base">Analyzing data to plug leaks in your funnel and maximize the value of every customer.</p>
-                </div>
+                    <h3 class="font-heading text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 sm:mb-4">Revenue Optimization</h3>
+                    <p class="text-txt-sub font-light leading-relaxed text-sm sm:text-base">Analyzing data to plug leaks in your funnel and maximize the value of every customer.</p>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Contact CTA Section -->
-    <section id="contact" class="py-24 bg-surface2 relative overflow-hidden border-t border-white/10">
+    <section id="contact" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-surface2 relative overflow-hidden border-t border-white/10">
         <!-- Abstract Cube Texture -->
         <div class="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         
-        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl mb-8 text-white text-glow">Stop Losing Leads Today.</h2>
-            <p class="text-txt-sub text-lg mb-12 max-w-2xl mx-auto font-light">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+            <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 sm:mb-8 text-white text-glow">Stop Losing Leads Today.</h2>
+            <p class="text-txt-sub text-base sm:text-lg mb-8 sm:mb-12 max-w-2xl mx-auto font-light">
                 Your business deserves a system that works as hard as you do. Book a free consultation and let's map out your growth.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="#" class="btn-primary inline-flex justify-center items-center px-10 py-4 text-sm font-bold uppercase tracking-widest text-black bg-accent hover:bg-white transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.4)] hover:shadow-[0_0_25px_rgba(212,175,55,0.6)] border-glow">
+            <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+                <a href="#contact" class="btn-primary inline-flex justify-center items-center px-6 sm:px-10 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-black bg-accent hover:bg-white transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.4)] hover:shadow-[0_0_25px_rgba(212,175,55,0.6)] border-glow w-full sm:w-auto">
                     Book Consultation
                 </a>
-                <a href="#" class="inline-flex justify-center items-center px-10 py-4 text-sm font-bold uppercase tracking-widest text-white border border-white/30 hover:border-accent hover:text-accent transition-all duration-300 hover:bg-white/5">
-                    <i class="fab fa-whatsapp mr-3"></i> WhatsApp Chat
+                <a href="https://wa.me/919876543210?text=Hi%20Irfan,%20I%20would%20like%20to%20discuss%20business%20growth%20opportunities" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-6 sm:px-10 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-white border border-white/30 hover:border-accent hover:text-accent transition-all duration-300 hover:bg-white/5 w-full sm:w-auto">
+                    <i class="fab fa-whatsapp mr-3" aria-hidden="true"></i> WhatsApp Chat
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-gray-500 py-16 border-t border-white/10">
+    <footer class="bg-black text-gray-500 py-12 sm:py-16 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8">
                 <div class="text-center md:text-left">
-                    <span class="text-2xl font-heading text-white">IRFAN<span class="text-accent">.</span></span>
+                    <a href="#hero" class="inline-block">
+                        <span class="text-xl sm:text-2xl font-heading text-white hover:text-accent transition-colors">IRFAN<span class="text-accent">.</span></span>
+                    </a>
                     <p class="text-xs uppercase tracking-widest mt-2 text-txt-sub">Business Growth Consultant</p>
                 </div>
                 
-                <div class="flex space-x-8">
-                    <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-facebook-f text-lg"></i></a>
-                    <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-twitter text-lg"></i></a>
-                    <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-instagram text-lg"></i></a>
-                    <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-linkedin-in text-lg"></i></a>
-                </div>
+                <nav class="flex space-x-6 sm:space-x-8" aria-label="Social media links">
+                    <a href="https://www.facebook.com" target="_blank" class="hover:text-accent transition-colors p-2" aria-label="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook-f text-base sm:text-lg" aria-hidden="true"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" class="hover:text-accent transition-colors p-2" aria-label="Twitter" rel="noopener noreferrer"><i class="fab fa-twitter text-base sm:text-lg" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" class="hover:text-accent transition-colors p-2" aria-label="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram text-base sm:text-lg" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" class="hover:text-accent transition-colors p-2" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in text-base sm:text-lg" aria-hidden="true"></i></a>
+                </nav>
             </div>
         </div>
     </footer>
 
     <script>
+        // Debounce function for performance
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
         // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
@@ -567,6 +695,9 @@
 
         btn.addEventListener('click', () => {
             const isHidden = menu.classList.toggle('hidden');
+            const isExpanded = !isHidden;
+            btn.setAttribute('aria-expanded', isExpanded);
+            
             if (isHidden) {
                 menuIcon.classList.remove('fa-times');
                 menuIcon.classList.add('fa-bars');
@@ -576,22 +707,28 @@
             }
         });
 
-        // Smooth Scroll for Anchor Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                menu.classList.add('hidden'); // Close mobile menu on click
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
+        // Smooth Scroll for Anchor Links (using event delegation)
+        document.body.addEventListener('click', function(e) {
+            const anchor = e.target.closest('a[href^="#"]');
+            if (anchor) {
+                const href = anchor.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    menu.classList.add('hidden');
+                    btn.setAttribute('aria-expanded', 'false');
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                    
+                    const target = document.querySelector(href);
                     target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
                     });
                 }
-            });
+            }
         });
         
-        // Scroll Reveal Animation
+        // Scroll Reveal Animation (optimized with IntersectionObserver)
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -601,38 +738,78 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
+                    // Unobserve after animation to improve performance
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
         
+        // Observe all reveal elements
         document.querySelectorAll('.reveal').forEach(el => {
             observer.observe(el);
         });
         
-        // Image Loading Animation
-        document.querySelectorAll('img').forEach(img => {
-            if (img.complete) {
-                img.classList.add('loaded');
-            } else {
-                img.addEventListener('load', () => {
-                    img.classList.add('loaded');
-                });
-            }
+        // Image Loading Animation (optimized)
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.complete) {
+                        img.classList.add('loaded');
+                    } else {
+                        img.addEventListener('load', () => {
+                            img.classList.add('loaded');
+                        }, { once: true });
+                    }
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            imageObserver.observe(img);
         });
 
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', () => {
+        // Navbar Scroll Effect (debounced for performance)
+        const handleScroll = debounce(() => {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 20) {
                 navbar.classList.add('shadow-lg', 'bg-page/95');
                 navbar.classList.remove('bg-page/90');
-                navbar.classList.replace('py-4', 'py-2');
             } else {
                 navbar.classList.remove('shadow-lg', 'bg-page/95');
                 navbar.classList.add('bg-page/90');
-                navbar.classList.replace('py-2', 'py-4');
+            }
+        }, 10);
+        
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        
+        // Close mobile menu when clicking outside (optimized)
+        document.addEventListener('click', (e) => {
+            if (!menu.classList.contains('hidden') && 
+                !menu.contains(e.target) && 
+                !btn.contains(e.target)) {
+                menu.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
             }
         });
+        
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Preload critical images
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(() => {
+                const criticalImages = document.querySelectorAll('img[loading="lazy"]');
+                criticalImages.forEach(img => {
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                    }
+                });
+            });
+        }
     </script>
 </body>
 </html>
