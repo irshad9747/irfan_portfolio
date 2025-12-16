@@ -285,10 +285,20 @@
         #mobile-menu {
             transition: all 0.3s ease-in-out;
             transform-origin: top;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(23, 23, 23, 0.95);
         }
         
         #mobile-menu:not(.hidden) {
             animation: slideDown 0.3s ease-out;
+        }
+        
+        /* Enhanced blur effect for mobile menu */
+        @supports (backdrop-filter: blur(20px)) {
+            #mobile-menu {
+                background: rgba(23, 23, 23, 0.85);
+            }
         }
         
         @keyframes slideDown {
@@ -443,8 +453,8 @@
         </div>
 
         <!-- Mobile Menu Panel -->
-        <nav id="mobile-menu" class="hidden md:hidden bg-surface/98 backdrop-blur-md border-t border-white/10 absolute w-full shadow-2xl" aria-label="Mobile navigation">
-            <div class="px-4 pt-2 pb-6 space-y-1">
+        <nav id="mobile-menu" class="hidden md:hidden bg-surface/95 backdrop-blur-xl border-t border-white/10 absolute w-full shadow-2xl" aria-label="Mobile navigation" style="backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+            <div class="px-4 pt-2 pb-6 space-y-1 relative z-10">
                 <a href="#hero" class="block px-3 py-3 border-b border-white/5 text-base font-medium text-gray-300 hover:text-accent hover:bg-white/5 transition-all duration-200 rounded-md">Home</a>
                 <a href="#about" class="block px-3 py-3 border-b border-white/5 text-base font-medium text-gray-300 hover:text-accent hover:bg-white/5 transition-all duration-200 rounded-md">About</a>
                 <a href="#services" class="block px-3 py-3 border-b border-white/5 text-base font-medium text-gray-300 hover:text-accent hover:bg-white/5 transition-all duration-200 rounded-md">Services</a>
