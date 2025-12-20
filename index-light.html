@@ -98,11 +98,11 @@
         
         /* Enhanced Text Effects */
         .text-glow {
-            text-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.15);
         }
         
         .text-glow-strong {
-            text-shadow: 0 0 30px rgba(245, 158, 11, 0.5), 0 0 60px rgba(245, 158, 11, 0.2);
+            text-shadow: 0 0 15px rgba(245, 158, 11, 0.25), 0 0 30px rgba(245, 158, 11, 0.1);
         }
         
         /* Smooth Animations */
@@ -166,7 +166,7 @@
             position: relative;
             overflow: hidden;
             background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-            box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.3), 0 2px 4px -1px rgba(245, 158, 11, 0.2);
+            box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.15), 0 2px 4px -1px rgba(245, 158, 11, 0.1);
         }
         
         .btn-primary::before {
@@ -190,11 +190,112 @@
         .btn-primary:hover {
             background: linear-gradient(135deg, #fbbf24 0%, #fcd34d 100%);
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.4), 0 4px 6px -2px rgba(245, 158, 11, 0.3), 0 0 20px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.2), 0 4px 6px -2px rgba(245, 158, 11, 0.15), 0 0 10px rgba(245, 158, 11, 0.15);
         }
         
         .btn-primary:active {
             transform: translateY(0);
+        }
+        
+        /* Premium Dark Button with Gold Text and Border */
+        .btn-consultation {
+            background-color: transparent;
+            color: #d4af37;
+            border: 1.5px solid #d4af37;
+            border-radius: 0;
+            padding: 12px 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2), 
+                        0 0 20px rgba(212, 175, 55, 0.1),
+                        inset 0 0 8px rgba(212, 175, 55, 0.03);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-consultation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(212, 175, 55, 0.15), 
+                transparent);
+            transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 0;
+        }
+        
+        .btn-consultation::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 4px;
+            padding: 1.5px;
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.6), 
+                rgba(243, 207, 85, 0.6), 
+                rgba(212, 175, 55, 0.6));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+        
+        .btn-consultation > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .btn-consultation:hover {
+            background-color: rgba(10, 10, 10, 0.95);
+            border-color: #f3cf55;
+            color: #f3cf55;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.6), 
+                        0 0 60px rgba(212, 175, 55, 0.3),
+                        inset 0 0 20px rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px) scale(1.02);
+        }
+        
+        .btn-consultation:hover::before {
+            left: 100%;
+        }
+        
+        .btn-consultation:hover::after {
+            opacity: 1;
+        }
+        
+        .btn-consultation:active {
+            transform: translateY(0) scale(0.98);
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.2), 
+                        inset 0 0 5px rgba(212, 175, 55, 0.05);
+        }
+        
+        .btn-consultation:focus-visible {
+            outline: 2px solid #d4af37;
+            outline-offset: 4px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3), 
+                        0 0 30px rgba(212, 175, 55, 0.15);
+        }
+        
+        /* Arrow icon animation */
+        .btn-consultation:hover .fa-arrow-right {
+            transform: translateX(4px);
+        }
+        
+        .btn-consultation .fa-arrow-right {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         /* Improved Card Hover Effects */
@@ -204,7 +305,7 @@
         
         .card-hover:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 20px rgba(245, 158, 11, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 10px rgba(245, 158, 11, 0.05);
         }
         
         /* Image Styling */
@@ -242,6 +343,14 @@
                 transition-duration: 0.01ms !important;
                 scroll-behavior: auto !important;
             }
+            
+            .btn-consultation {
+                transform: none !important;
+            }
+            
+            .btn-consultation:hover {
+                transform: none !important;
+            }
         }
         
         /* Enhanced Focus States for Accessibility */
@@ -270,11 +379,11 @@
         
         /* Enhanced Border Glow */
         .border-glow {
-            box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.1);
         }
         
         .border-glow:hover {
-            box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
         }
         
         /* Skip to content link for accessibility */
@@ -363,13 +472,29 @@
             
             /* Reduce text glow on mobile for better performance */
             .text-glow-strong {
-                text-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+                text-shadow: 0 0 10px rgba(245, 158, 11, 0.15);
             }
             
             /* Better touch targets */
             a, button {
                 min-height: 44px;
                 min-width: 44px;
+            }
+            
+            /* Mobile button optimizations */
+            .btn-consultation {
+                padding: 14px 20px;
+                font-size: 0.75rem;
+                letter-spacing: 0.08em;
+                box-shadow: 0 0 15px rgba(212, 175, 55, 0.3), 
+                            0 0 30px rgba(212, 175, 55, 0.15),
+                            inset 0 0 10px rgba(212, 175, 55, 0.05);
+            }
+            
+            [data-theme="dark"] .btn-consultation:hover {
+                box-shadow: 0 0 10px rgba(212, 175, 55, 0.25), 
+                            0 0 20px rgba(212, 175, 55, 0.12),
+                            inset 0 0 8px rgba(212, 175, 55, 0.05);
             }
             
             /* Improved mobile card spacing */
@@ -430,6 +555,46 @@
             /* Process flow text */
             #hero .flex.flex-col.text-xs > div {
                 font-size: 0.875rem !important; /* text-sm equivalent */
+            }
+            
+            /* How We Work section mobile optimization */
+            #how-we-work .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            #how-we-work .reveal ul {
+                margin-left: 0;
+            }
+        }
+        
+        /* Custom grid layout for How We Work section - 1 1 1 / 0.5 1 1 0.5 */
+        @media (min-width: 1024px) {
+            #how-we-work .grid {
+                grid-template-columns: repeat(8, 1fr);
+            }
+            
+            /* First row: steps 1, 2, 3 each span 2 columns, centered (cols 2-3, 4-5, 6-7) */
+            #how-we-work .grid > div:nth-child(1) {
+                grid-column: 2 / 4;
+            }
+            #how-we-work .grid > div:nth-child(2) {
+                grid-column: 4 / 6;
+            }
+            #how-we-work .grid > div:nth-child(3) {
+                grid-column: 6 / 8;
+            }
+            
+            /* Hide the empty spacer on first row */
+            #how-we-work .grid > div:nth-child(4) {
+                display: none;
+            }
+            
+            /* Second row: 0.5 spacer (col 1), step 4 (cols 3-4), step 5 (cols 5-6), 0.5 spacer (col 7) */
+            #how-we-work .grid > div:nth-child(5) {
+                grid-column: 3 / 5;
+            }
+            #how-we-work .grid > div:nth-child(6) {
+                grid-column: 5 / 7;
             }
         }
         
@@ -508,10 +673,6 @@
             background-color: var(--surface-bg) !important;
         }
         
-        [data-theme="dark"] .bg-gray-50 {
-            background-color: var(--surface-bg) !important;
-        }
-        
         [data-theme="dark"] .border-gray-200,
         [data-theme="dark"] .border-gray-300 {
             border-color: var(--border-color) !important;
@@ -544,11 +705,11 @@
         }
         
         [data-theme="dark"] .text-glow {
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
         }
         
         [data-theme="dark"] .text-glow-strong {
-            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5), 0 0 60px rgba(212, 175, 55, 0.2);
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.25), 0 0 30px rgba(212, 175, 55, 0.1);
         }
         
         [data-theme="dark"] .accent {
@@ -591,6 +752,66 @@
         
         [data-theme="dark"] blockquote.bg-gradient-to-r {
             background: linear-gradient(to right, var(--surface-bg), transparent) !important;
+        }
+        
+        /* Light Theme Button Styling */
+        [data-theme="light"] .btn-consultation {
+            background-color: transparent;
+            color: rgb(245, 158, 11);
+            border-color: rgb(245, 158, 11);
+        }
+        
+        [data-theme="light"] .btn-consultation:hover {
+            background-color: transparent;
+            border-color: rgb(245, 158, 11);
+            color: rgb(245, 158, 11);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3), 
+                        0 0 30px rgba(245, 158, 11, 0.15),
+                        inset 0 0 10px rgba(245, 158, 11, 0.05);
+        }
+        
+        [data-theme="light"] .btn-consultation:active {
+            box-shadow: 0 0 8px rgba(245, 158, 11, 0.2), 
+                        inset 0 0 5px rgba(245, 158, 11, 0.05);
+        }
+        
+        [data-theme="light"] .btn-consultation:focus-visible {
+            outline-color: rgb(245, 158, 11);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3), 
+                        0 0 30px rgba(245, 158, 11, 0.15);
+        }
+        
+        /* Dark Theme Button Styling */
+        [data-theme="dark"] .btn-consultation {
+            background-color: transparent;
+            color: #d4af37;
+            border-color: #d4af37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.1), 
+                        0 0 20px rgba(212, 175, 55, 0.05),
+                        inset 0 0 8px rgba(212, 175, 55, 0.03);
+        }
+        
+        [data-theme="dark"] .btn-consultation:hover {
+            background-color: rgba(10, 10, 10, 0.95);
+            border-color: #f3cf55;
+            color: #f3cf55;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.6), 
+                        0 0 60px rgba(212, 175, 55, 0.3),
+                        inset 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+        
+        /* Theme Toggle Button Hover in Dark Mode */
+        [data-theme="dark"] #theme-toggle,
+        [data-theme="dark"] #theme-toggle-mobile {
+            color: var(--txt-sub);
+            transition: color 0.3s ease;
+        }
+        
+        [data-theme="dark"] #theme-toggle:hover,
+        [data-theme="dark"] #theme-toggle:hover #theme-icon,
+        [data-theme="dark"] #theme-toggle-mobile:hover,
+        [data-theme="dark"] #theme-toggle-mobile:hover #theme-icon-mobile {
+            color: #d4af37 !important;
         }
     </style>
     
@@ -666,8 +887,8 @@
     <nav class="sticky top-0 w-full z-50 bg-page/95 backdrop-blur-md border-b border-gray-200 transition-all duration-300 shadow-sm" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 md:h-20 items-center">
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#hero" class="font-heading text-2xl md:text-3xl font-bold tracking-tight text-txt-main" aria-label="Irfan.in - Home">
+                <div class="flex-shrink-0 flex items-center h-full">
+                    <a href="#hero" class="font-heading text-2xl md:text-3xl font-bold tracking-tight text-txt-main flex items-center h-full" aria-label="Irfan.in - Home">
                         IRFAN<span class="text-accent">.</span>
                     </a>
                 </div>
@@ -677,12 +898,13 @@
                     <a href="#hero" class="link-underline text-sm font-bold uppercase tracking-wider text-txt-sub hover:text-txt-main pb-1 transition-all">Home</a>
                     <a href="#about" class="link-underline text-sm font-bold uppercase tracking-wider text-txt-sub hover:text-txt-main pb-1 transition-all">About</a>
                     <a href="#services" class="link-underline text-sm font-bold uppercase tracking-wider text-txt-sub hover:text-txt-main pb-1 transition-all">Services</a>
-                    <button id="theme-toggle" class="p-2 rounded-md hover:bg-gray-100 transition-colors text-txt-sub hover:text-accent" aria-label="Toggle dark/light mode" title="Toggle theme">
-                        <i class="fas fa-sun text-lg" id="theme-icon" aria-hidden="true"></i>
-                    </button>
-                    <a href="#contact" class="btn-primary px-6 py-3 rounded-sm border border-accent/50 bg-transparent text-accent text-sm font-bold uppercase tracking-widest hover:bg-accent hover:text-txt-main transition-all duration-300 border-glow">
+                    <a href="#how-we-work" class="link-underline text-sm font-bold uppercase tracking-wider text-txt-sub hover:text-txt-main pb-1 transition-all">Process</a>
+                    <a href="#contact" class="btn-consultation px-6 py-3 text-sm font-bold uppercase tracking-widest">
                         Book Consultation
                     </a>
+                    <button id="theme-toggle" class="p-2 rounded-md transition-colors text-txt-sub hover:text-accent" aria-label="Toggle dark/light mode" title="Toggle theme">
+                        <i class="fas fa-sun text-lg" id="theme-icon" aria-hidden="true"></i>
+                    </button>
                 </nav>
 
                 <!-- Mobile menu button -->
@@ -700,10 +922,11 @@
                 <a href="#hero" class="block px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 transition-all duration-200 rounded-md">Home</a>
                 <a href="#about" class="block px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 transition-all duration-200 rounded-md">About</a>
                 <a href="#services" class="block px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 transition-all duration-200 rounded-md">Services</a>
-                <button id="theme-toggle-mobile" class="block w-full px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 transition-all duration-200 rounded-md text-left">
+                <a href="#how-we-work" class="block px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 transition-all duration-200 rounded-md">Process</a>
+                <button id="theme-toggle-mobile" class="block w-full px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent transition-all duration-200 rounded-md text-left">
                     <i class="fas fa-sun mr-2" id="theme-icon-mobile" aria-hidden="true"></i> Toggle Theme
                 </button>
-                <a href="#contact" class="block px-3 py-3 mt-4 text-center bg-accent text-txt-main font-bold uppercase tracking-wider hover:bg-accent-light transition-all duration-300 rounded-md border-glow">Book Consultation</a>
+                <a href="#contact" class="btn-consultation block px-3 py-3 mt-4 text-center text-sm font-bold uppercase tracking-widest">Book Consultation</a>
             </div>
         </nav>
     </nav>
@@ -744,9 +967,9 @@
                     </blockquote>
 
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
-                    <a href="#contact" class="btn-primary inline-flex justify-center items-center px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-txt-main bg-accent hover:bg-accent-light transition-all duration-300 group shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.4)] border-glow w-full sm:w-auto">
+                    <a href="#contact" class="btn-consultation inline-flex justify-center items-center px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest w-full sm:w-auto">
                         Book a Consultation
-                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                        <i class="fas fa-arrow-right ml-2 transition-transform" aria-hidden="true"></i>
                     </a>
                         <a href="#about" class="inline-flex justify-center items-center px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-txt-main border border-gray-300 hover:border-accent hover:text-accent transition-all duration-300 bg-transparent hover:bg-gray-50 w-full sm:w-auto">
                             Learn More
@@ -864,6 +1087,141 @@
         </div>
     </section>
 
+    <!-- How We Work Section -->
+    <section id="how-we-work" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-surface border-t border-gray-200 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+                <span class="text-accent font-bold tracking-widest uppercase text-xs">Process</span>
+                <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 mb-3 text-txt-main text-glow-strong">How We Work</h2>
+                <p class="text-txt-sub text-sm sm:text-base font-light">
+                    Turning Leads into Sales with Smart Systems
+                </p>
+                <div class="w-12 h-0.5 bg-accent mx-auto mt-3"></div>
+            </div>
+
+            <!-- Process Steps - Compact Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 max-w-6xl mx-auto">
+                <!-- Step 1 -->
+                <div class="reveal bg-surface p-5 sm:p-6 border border-gray-200 hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1">
+                    <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
+                        <span class="text-txt-muted font-normal mr-2">01.</span>Business Understanding
+                    </h3>
+                    <ul class="space-y-1.5 text-txt-sub font-light text-xs sm:text-sm">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                            <span>Analyze Business Model</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                            <span>Current Marketing & Sales</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                            <span>Clear Growth Goals</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="reveal bg-surface p-5 sm:p-6 border border-gray-200 hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1">
+                    <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
+                        <span class="text-txt-muted font-normal mr-2">02.</span>Strategy & Roadmap
+                    </h3>
+                    <ul class="space-y-1.5 text-txt-sub font-light text-xs sm:text-sm">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                            <span>Target Audience & Positioning</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                            <span>Right platforms & messaging</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                            <span>Lead generation strategy</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="reveal bg-surface p-5 sm:p-6 border border-gray-200 hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1">
+                    <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
+                        <span class="text-txt-muted font-normal mr-2">03.</span>System Implementation
+                    </h3>
+                    <ul class="space-y-1.5 text-txt-sub font-light text-xs sm:text-sm">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                            <span>Performance marketing (Meta Ads)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                            <span>Content creation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                            <span>Automation & tracking</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Empty spacer for first row on large screens -->
+                <div class="hidden lg:block"></div>
+
+                <!-- Step 4 -->
+                <div class="reveal bg-surface p-5 sm:p-6 border border-gray-200 hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-start-2 lg:col-span-1">
+                    <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
+                        <span class="text-txt-muted font-normal mr-2">04.</span>Conversion Optimization
+                    </h3>
+                    <ul class="space-y-1.5 text-txt-sub font-light text-xs sm:text-sm">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                            <span>Lead nurturing process</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                            <span>Sales follow-up improvement</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                            <span>Continuous optimization</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="reveal bg-surface p-5 sm:p-6 border border-gray-200 hover:border-accent/30 transition-all duration-300 shadow-sm card-hover md:col-span-2 lg:col-span-1 lg:col-start-3">
+                    <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
+                        <span class="text-txt-muted font-normal mr-2">05.</span>Review & Scale
+                    </h3>
+                    <ul class="space-y-1.5 text-txt-sub font-light text-xs sm:text-sm">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                            <span>Weekly/monthly reviews</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                            <span>Performance analysis</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                            <span>Scaling winning campaigns</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tagline -->
+            <div class="text-center reveal">
+                <blockquote class="border-l-4 border-accent pl-4 sm:pl-6 py-3 bg-gradient-to-r from-surface to-transparent hover:border-accent-light transition-colors duration-300 max-w-2xl mx-auto">
+                    <p class="text-base sm:text-lg lg:text-xl font-heading text-txt-main italic">
+                        "We don't run ads. We build systems that convert leads into sales."
+                    </p>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact CTA Section -->
     <section id="contact" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-surface2 relative overflow-hidden border-t border-gray-200">
         <!-- Abstract Cube Texture -->
@@ -875,7 +1233,7 @@
                 Your business deserves a system that works as hard as you do. Book a consultation and let's map out your growth.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-                <a href="#contact" class="btn-primary inline-flex justify-center items-center px-6 sm:px-10 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-txt-main bg-accent hover:bg-accent-light transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.4)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] border-glow w-full sm:w-auto">
+                <a href="#contact" class="btn-consultation inline-flex justify-center items-center px-6 sm:px-10 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest w-full sm:w-auto">
                     Book Consultation
                 </a>
                 <a href="https://wa.me/919876543210?text=Hi%20Irfan,%20I%20would%20like%20to%20discuss%20business%20growth%20opportunities" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-6 sm:px-10 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-txt-main border border-gray-300 hover:border-accent hover:text-accent transition-all duration-300 hover:bg-gray-50 w-full sm:w-auto">
