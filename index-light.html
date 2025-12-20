@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth" prefix="og: https://ogp.me/ns#">
+<html lang="en" class="scroll-smooth" prefix="og: https://ogp.me/ns#" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,8 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     
     <!-- Theme Color -->
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#f59e0b" />
+    <meta name="msapplication-TileColor" content="#f59e0b" />
     
     <!-- SEO & Meta Tags -->
     <meta name="description" content="Irfan is a Business Growth Consultant and Entrepreneur helping businesses increase sales with innovative marketing & sales systems." />
@@ -59,21 +59,21 @@
                 extend: {
                     colors: {
                         // Light Theme Palette
-                        page: '#ffffff',       // Main Background (White)
-                        surface: '#f8f9fa',    // Card/Section Background (Light Grey)
-                        surface2: '#f0f0f0',   // Lighter Surface for hover/borders
+                        page: '#f9fafb',       // Main Background (Gray-50)
+                        surface: '#ffffff',    // Card/Section Background (White)
+                        surface2: '#f3f4f6',   // Lighter Surface for hover/borders
                         
                         txt: {
-                            main: '#1a1a1a',   // Main Headings (Dark)
-                            sub: '#666666',    // Body Text (Medium Grey)
-                            muted: '#999999',  // Subtle Text
+                            main: '#111827',   // Main Headings (Gray-900)
+                            sub: '#6b7280',    // Body Text (Gray-500)
+                            muted: '#9ca3af',  // Subtle Text
                         },
                         
                         accent: {
-                            DEFAULT: '#2563eb', // Professional Blue
-                            light: '#3b82f6',
-                            dark: '#1e40af',
-                            hover: '#1d4ed8'
+                            DEFAULT: '#f59e0b', // Amber-500
+                            light: '#fbbf24',
+                            dark: '#d97706',
+                            hover: '#fcd34d'
                         }
                     },
                     fontFamily: {
@@ -98,11 +98,11 @@
         
         /* Enhanced Text Effects */
         .text-glow {
-            text-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
+            text-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
         }
         
         .text-glow-strong {
-            text-shadow: 0 0 30px rgba(37, 99, 235, 0.3), 0 0 60px rgba(37, 99, 235, 0.1);
+            text-shadow: 0 0 30px rgba(245, 158, 11, 0.5), 0 0 60px rgba(245, 158, 11, 0.2);
         }
         
         /* Smooth Animations */
@@ -165,6 +165,8 @@
         .btn-primary {
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.3), 0 2px 4px -1px rgba(245, 158, 11, 0.2);
         }
         
         .btn-primary::before {
@@ -175,7 +177,7 @@
             width: 0;
             height: 0;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.2);
             transform: translate(-50%, -50%);
             transition: width 0.6s, height 0.6s;
         }
@@ -185,6 +187,16 @@
             height: 300px;
         }
         
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #fbbf24 0%, #fcd34d 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.4), 0 4px 6px -2px rgba(245, 158, 11, 0.3), 0 0 20px rgba(245, 158, 11, 0.3);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+        
         /* Improved Card Hover Effects */
         .card-hover {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -192,7 +204,7 @@
         
         .card-hover:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 20px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 20px rgba(245, 158, 11, 0.1);
         }
         
         /* Image Styling */
@@ -235,7 +247,7 @@
         /* Enhanced Focus States for Accessibility */
         a:focus-visible,
         button:focus-visible {
-            outline: 2px solid #2563eb;
+            outline: 2px solid #f59e0b;
             outline-offset: 4px;
             border-radius: 2px;
         }
@@ -247,8 +259,8 @@
         
         /* Better Selection Styling */
         ::selection {
-            background-color: #2563eb;
-            color: #fff;
+            background-color: #f59e0b;
+            color: #111827;
         }
         
         /* Improved Gradient Overlays */
@@ -258,11 +270,11 @@
         
         /* Enhanced Border Glow */
         .border-glow {
-            box-shadow: 0 0 20px rgba(37, 99, 235, 0.15);
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
         }
         
         .border-glow:hover {
-            box-shadow: 0 0 30px rgba(37, 99, 235, 0.25);
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
         }
         
         /* Skip to content link for accessibility */
@@ -270,8 +282,8 @@
             position: absolute;
             top: -40px;
             left: 0;
-            background: #2563eb;
-            color: #fff;
+            background: #f59e0b;
+            color: #111827;
             padding: 8px;
             text-decoration: none;
             z-index: 100;
@@ -329,7 +341,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #2563eb;
+            background: #f59e0b;
             transition: width 0.3s ease;
         }
         
@@ -351,7 +363,7 @@
             
             /* Reduce text glow on mobile for better performance */
             .text-glow-strong {
-                text-shadow: 0 0 15px rgba(37, 99, 235, 0.2);
+                text-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
             }
             
             /* Better touch targets */
@@ -363,6 +375,61 @@
             /* Improved mobile card spacing */
             .card-hover {
                 margin-bottom: 1rem;
+            }
+            
+            /* Larger text sizes for mobile */
+            #hero .font-heading.text-4xl {
+                font-size: 2.5rem !important; /* text-5xl equivalent */
+                line-height: 1.2 !important;
+            }
+            
+            #hero h1 span.text-lg {
+                font-size: 1.25rem !important; /* text-xl equivalent */
+            }
+            
+            #hero > div > div > div > p.text-base {
+                font-size: 1.125rem !important; /* text-lg equivalent */
+            }
+            
+            #about h2.font-heading {
+                font-size: 2rem !important; /* text-3xl equivalent */
+            }
+            
+            #about .prose p.text-sm {
+                font-size: 1rem !important; /* text-base equivalent */
+            }
+            
+            #about .prose p.font-medium.text-base {
+                font-size: 1.125rem !important; /* text-lg equivalent */
+            }
+            
+            #services h2.font-heading {
+                font-size: 2rem !important; /* text-3xl equivalent */
+            }
+            
+            #services article h3.font-heading {
+                font-size: 1.25rem !important; /* text-xl equivalent */
+            }
+            
+            #services article p.text-sm {
+                font-size: 1rem !important; /* text-base equivalent */
+            }
+            
+            #contact h2.font-heading {
+                font-size: 2rem !important; /* text-3xl equivalent */
+            }
+            
+            #contact > div > p.text-base {
+                font-size: 1.125rem !important; /* text-lg equivalent */
+            }
+            
+            #hero blockquote p {
+                font-size: 1.25rem !important; /* text-xl equivalent */
+            }
+            
+            /* Process flow text */
+            #hero .flex.flex-col.text-xs > div {
+                font-size: 0.875rem !important; /* text-sm equivalent */
             }
         }
         
@@ -391,6 +458,140 @@
                 font-size: 0.8em;
             }
         }
+        
+        /* Dark Theme Styles */
+        [data-theme="dark"] {
+            --page-bg: #0a0a0a;
+            --surface-bg: #171717;
+            --surface2-bg: #262626;
+            --txt-main: #ffffff;
+            --txt-sub: #a3a3a3;
+            --txt-muted: #525252;
+            --accent-color: #d4af37;
+            --accent-light: #f3cf55;
+            --accent-dark: #aa8c2c;
+            --accent-hover: #b5952f;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        [data-theme="dark"] body {
+            background-color: var(--page-bg);
+            color: var(--txt-main);
+        }
+        
+        [data-theme="dark"] .bg-page {
+            background-color: var(--page-bg) !important;
+        }
+        
+        [data-theme="dark"] .bg-surface {
+            background-color: var(--surface-bg) !important;
+        }
+        
+        [data-theme="dark"] .bg-surface2 {
+            background-color: var(--surface2-bg) !important;
+        }
+        
+        [data-theme="dark"] .text-txt-main {
+            color: var(--txt-main) !important;
+        }
+        
+        [data-theme="dark"] .text-txt-sub {
+            color: var(--txt-sub) !important;
+        }
+        
+        [data-theme="dark"] .text-gray-600,
+        [data-theme="dark"] .text-gray-700 {
+            color: var(--txt-sub) !important;
+        }
+        
+        [data-theme="dark"] .bg-gray-50 {
+            background-color: var(--surface-bg) !important;
+        }
+        
+        [data-theme="dark"] .bg-gray-50 {
+            background-color: var(--surface-bg) !important;
+        }
+        
+        [data-theme="dark"] .border-gray-200,
+        [data-theme="dark"] .border-gray-300 {
+            border-color: var(--border-color) !important;
+        }
+        
+        [data-theme="dark"] .bg-pattern {
+            background-image: radial-gradient(#262626 1px, transparent 1px);
+        }
+        
+        [data-theme="dark"] .bg-surface\/95,
+        [data-theme="dark"] .bg-page\/95 {
+            background-color: rgba(10, 10, 10, 0.95) !important;
+        }
+        
+        [data-theme="dark"] #mobile-menu {
+            background: rgba(23, 23, 23, 0.95) !important;
+        }
+        
+        [data-theme="dark"] .hover\:bg-gray-50:hover,
+        [data-theme="dark"] .hover\:bg-gray-100:hover {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+        }
+        
+        [data-theme="dark"] .shadow-sm {
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5) !important;
+        }
+        
+        [data-theme="dark"] .shadow-md {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        [data-theme="dark"] .text-glow {
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        [data-theme="dark"] .text-glow-strong {
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5), 0 0 60px rgba(212, 175, 55, 0.2);
+        }
+        
+        [data-theme="dark"] .accent {
+            --accent-color: #d4af37;
+        }
+        
+        [data-theme="dark"] .text-accent {
+            color: var(--accent-color) !important;
+        }
+        
+        [data-theme="dark"] .bg-accent {
+            background-color: var(--accent-color) !important;
+        }
+        
+        [data-theme="dark"] .border-accent {
+            border-color: var(--accent-color) !important;
+        }
+        
+        [data-theme="dark"] .btn-primary {
+            background: var(--accent-color);
+            color: #000 !important;
+        }
+        
+        [data-theme="dark"] .btn-primary:hover {
+            background: var(--accent-light);
+        }
+        
+        [data-theme="dark"] .selection\:bg-accent::selection {
+            background-color: var(--accent-color);
+            color: #000;
+        }
+        
+        [data-theme="dark"] blockquote {
+            border-left-color: var(--accent-color) !important;
+        }
+        
+        [data-theme="dark"] blockquote p {
+            color: var(--txt-main) !important;
+        }
+        
+        [data-theme="dark"] blockquote.bg-gradient-to-r {
+            background: linear-gradient(to right, var(--surface-bg), transparent) !important;
+        }
     </style>
     
     <!-- Structured Data (JSON-LD) -->
@@ -418,8 +619,28 @@
         "telephone": "+919876543210"
     }
     </script>
+    
+    <!-- Immediate Theme Detection (prevents flash) -->
+    <script>
+        (function() {
+            // Get theme preference - check localStorage first, then system preference
+            const getInitialTheme = () => {
+                const saved = localStorage.getItem('theme');
+                if (saved) return saved;
+                // Check system preference
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    return 'dark';
+                }
+                return 'light';
+            };
+            
+            // Apply theme immediately before page renders
+            const theme = getInitialTheme();
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
-<body class="font-sans text-txt-main antialiased bg-page selection:bg-accent selection:text-white">
+<body class="font-sans text-txt-main antialiased bg-page selection:bg-accent selection:text-txt-main">
     <!-- Top Bar -->
     <div class="bg-gray-50 text-txt-sub py-3 border-b border-gray-200 hidden md:block">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm font-medium tracking-wide">
@@ -456,7 +677,10 @@
                     <a href="#hero" class="link-underline text-sm font-bold uppercase tracking-wider text-txt-sub hover:text-txt-main pb-1 transition-all">Home</a>
                     <a href="#about" class="link-underline text-sm font-bold uppercase tracking-wider text-txt-sub hover:text-txt-main pb-1 transition-all">About</a>
                     <a href="#services" class="link-underline text-sm font-bold uppercase tracking-wider text-txt-sub hover:text-txt-main pb-1 transition-all">Services</a>
-                    <a href="#contact" class="btn-primary px-6 py-3 rounded-sm border border-accent/50 bg-transparent text-accent text-sm font-bold uppercase tracking-widest hover:bg-accent hover:text-white transition-all duration-300 border-glow">
+                    <button id="theme-toggle" class="p-2 rounded-md hover:bg-gray-100 transition-colors text-txt-sub hover:text-accent" aria-label="Toggle dark/light mode" title="Toggle theme">
+                        <i class="fas fa-sun text-lg" id="theme-icon" aria-hidden="true"></i>
+                    </button>
+                    <a href="#contact" class="btn-primary px-6 py-3 rounded-sm border border-accent/50 bg-transparent text-accent text-sm font-bold uppercase tracking-widest hover:bg-accent hover:text-txt-main transition-all duration-300 border-glow">
                         Book Consultation
                     </a>
                 </nav>
@@ -476,7 +700,10 @@
                 <a href="#hero" class="block px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 transition-all duration-200 rounded-md">Home</a>
                 <a href="#about" class="block px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 transition-all duration-200 rounded-md">About</a>
                 <a href="#services" class="block px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 transition-all duration-200 rounded-md">Services</a>
-                <a href="#contact" class="block px-3 py-3 mt-4 text-center bg-accent text-white font-bold uppercase tracking-wider hover:bg-accent-dark transition-all duration-300 rounded-md border-glow">Book Consultation</a>
+                <button id="theme-toggle-mobile" class="block w-full px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 transition-all duration-200 rounded-md text-left">
+                    <i class="fas fa-sun mr-2" id="theme-icon-mobile" aria-hidden="true"></i> Toggle Theme
+                </button>
+                <a href="#contact" class="block px-3 py-3 mt-4 text-center bg-accent text-txt-main font-bold uppercase tracking-wider hover:bg-accent-light transition-all duration-300 rounded-md border-glow">Book Consultation</a>
             </div>
         </nav>
     </nav>
@@ -517,7 +744,7 @@
                     </blockquote>
 
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
-                    <a href="#contact" class="btn-primary inline-flex justify-center items-center px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-white bg-accent hover:bg-accent-dark transition-all duration-300 group shadow-[0_0_20px_rgba(37,99,235,0.2)] hover:shadow-[0_0_30px_rgba(37,99,235,0.3)] border-glow w-full sm:w-auto">
+                    <a href="#contact" class="btn-primary inline-flex justify-center items-center px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-txt-main bg-accent hover:bg-accent-light transition-all duration-300 group shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.4)] border-glow w-full sm:w-auto">
                         Book a Consultation
                         <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
                     </a>
@@ -648,7 +875,7 @@
                 Your business deserves a system that works as hard as you do. Book a consultation and let's map out your growth.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-                <a href="#contact" class="btn-primary inline-flex justify-center items-center px-6 sm:px-10 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-white bg-accent hover:bg-accent-dark transition-all duration-300 shadow-[0_0_15px_rgba(37,99,235,0.3)] hover:shadow-[0_0_25px_rgba(37,99,235,0.4)] border-glow w-full sm:w-auto">
+                <a href="#contact" class="btn-primary inline-flex justify-center items-center px-6 sm:px-10 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-txt-main bg-accent hover:bg-accent-light transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.4)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] border-glow w-full sm:w-auto">
                     Book Consultation
                 </a>
                 <a href="https://wa.me/919876543210?text=Hi%20Irfan,%20I%20would%20like%20to%20discuss%20business%20growth%20opportunities" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-6 sm:px-10 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-txt-main border border-gray-300 hover:border-accent hover:text-accent transition-all duration-300 hover:bg-gray-50 w-full sm:w-auto">
@@ -680,6 +907,74 @@
     </footer>
 
     <script>
+        // Theme Toggle Functionality
+        (function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+            const themeIcon = document.getElementById('theme-icon');
+            const themeIconMobile = document.getElementById('theme-icon-mobile');
+            
+            // Get current theme preference
+            const getTheme = () => {
+                const saved = localStorage.getItem('theme');
+                if (saved) return saved;
+                // Check system preference if no saved preference
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    return 'dark';
+                }
+                return 'light';
+            };
+            
+            // Apply theme (only saves to localStorage if manually set)
+            const applyTheme = (theme, saveToStorage = false) => {
+                document.documentElement.setAttribute('data-theme', theme);
+                
+                // Only save to localStorage when user manually toggles
+                if (saveToStorage) {
+                    localStorage.setItem('theme', theme);
+                }
+                
+                // Update icons
+                if (theme === 'dark') {
+                    themeIcon?.classList.remove('fa-sun');
+                    themeIcon?.classList.add('fa-moon');
+                    themeIconMobile?.classList.remove('fa-sun');
+                    themeIconMobile?.classList.add('fa-moon');
+                } else {
+                    themeIcon?.classList.remove('fa-moon');
+                    themeIcon?.classList.add('fa-sun');
+                    themeIconMobile?.classList.remove('fa-moon');
+                    themeIconMobile?.classList.add('fa-sun');
+                }
+            };
+            
+            // Toggle theme (user action - save to localStorage)
+            const toggleTheme = () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || getTheme();
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                applyTheme(newTheme, true); // Save to localStorage when manually toggled
+            };
+            
+            // Initialize theme on page load (don't save if just detecting system preference)
+            const initialTheme = getTheme();
+            const hasManualPreference = localStorage.getItem('theme') !== null;
+            applyTheme(initialTheme, hasManualPreference);
+            
+            // Add event listeners
+            themeToggle?.addEventListener('click', toggleTheme);
+            themeToggleMobile?.addEventListener('click', toggleTheme);
+            
+            // Listen for system theme changes (only if user hasn't manually set a preference)
+            if (window.matchMedia) {
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                    // Only update if user hasn't manually set a preference
+                    if (!localStorage.getItem('theme')) {
+                        applyTheme(e.matches ? 'dark' : 'light', false);
+                    }
+                });
+            }
+        })();
+
         // Debounce function for performance
         function debounce(func, wait) {
             let timeout;
@@ -815,3 +1110,4 @@
     </script>
 </body>
 </html>
+
