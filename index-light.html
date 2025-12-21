@@ -10,8 +10,8 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     
     <!-- Theme Color -->
-    <meta name="theme-color" content="#f59e0b" />
-    <meta name="msapplication-TileColor" content="#f59e0b" />
+    <meta name="theme-color" content="#ea7a2e" />
+    <meta name="msapplication-TileColor" content="#ea7a2e" />
     
     <!-- SEO & Meta Tags -->
     <meta name="description" content="Irfan is a Business Growth Consultant and Entrepreneur helping businesses increase sales with innovative marketing & sales systems." />
@@ -58,22 +58,22 @@
             theme: {
                 extend: {
                     colors: {
-                        // Light Theme Palette
-                        page: '#f9fafb',       // Main Background (Gray-50)
-                        surface: '#ffffff',    // Card/Section Background (White)
-                        surface2: '#f3f4f6',   // Lighter Surface for hover/borders
+                        // Light Theme Palette - Warm Feel
+                        page: '#faf8f5',       // Main Background (Warm Cream)
+                        surface: '#fffefb',    // Card/Section Background (Warm White)
+                        surface2: '#f5f3f0',   // Lighter Surface for hover/borders (Warm Beige)
                         
                         txt: {
-                            main: '#111827',   // Main Headings (Gray-900)
-                            sub: '#6b7280',    // Body Text (Gray-500)
-                            muted: '#9ca3af',  // Subtle Text
+                            main: '#1a1816',   // Main Headings (Warm Dark Brown)
+                            sub: '#6b5d52',    // Body Text (Warm Gray-Brown)
+                            muted: '#9c8e82',  // Subtle Text (Warm Taupe)
                         },
                         
                         accent: {
-                            DEFAULT: '#f59e0b', // Amber-500
-                            light: '#fbbf24',
+                            DEFAULT: '#ea7a2e', // Warm Orange
+                            light: '#f59e0b',
                             dark: '#d97706',
-                            hover: '#fcd34d'
+                            hover: '#fbbf24'
                         }
                     },
                     fontFamily: {
@@ -88,21 +88,21 @@
         }
     </script>
     <style>
-        /* Light Pattern Background */
+        /* Light Pattern Background - Warm Feel */
         .bg-pattern {
             background-color: transparent;
-            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-image: radial-gradient(#e8ddd4 1px, transparent 1px);
             background-size: 30px 30px;
-            opacity: 0.4;
+            opacity: 0.35;
         }
         
-        /* Enhanced Text Effects */
+        /* Enhanced Text Effects - Warm Feel */
         .text-glow {
-            text-shadow: 0 0 10px rgba(245, 158, 11, 0.15);
+            text-shadow: 0 0 10px rgba(234, 122, 46, 0.2);
         }
         
         .text-glow-strong {
-            text-shadow: 0 0 15px rgba(245, 158, 11, 0.25), 0 0 30px rgba(245, 158, 11, 0.1);
+            text-shadow: 0 0 15px rgba(234, 122, 46, 0.3), 0 0 30px rgba(234, 122, 46, 0.15);
         }
         
         /* Smooth Animations */
@@ -137,6 +137,49 @@
             }
         }
         
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
         .animate-fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
         }
@@ -147,6 +190,99 @@
         
         .animate-slide-in-right {
             animation: slideInRight 0.8s ease-out forwards;
+        }
+        
+        /* Scroll-triggered animation classes */
+        .fade {
+            opacity: 0;
+            transform: scale(0.98);
+            will-change: opacity, transform;
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        
+        .fade.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .fade-up {
+            opacity: 0;
+            transform: translate3d(0, 30px, 0) scale(0.98);
+            will-change: opacity, transform;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-up.animate {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
+        }
+        
+        .slide-left {
+            opacity: 0;
+            transform: translate3d(-30px, 0, 0);
+            will-change: opacity, transform;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .slide-left.animate {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+        
+        .slide-right {
+            opacity: 0;
+            transform: translate3d(30px, 0, 0);
+            will-change: opacity, transform;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .slide-right.animate {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+        
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.95);
+            will-change: opacity, transform;
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        
+        .scale-in.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* Staggered animations */
+        [class*="stagger-"] {
+            opacity: 0;
+            transform: translateY(20px);
+            will-change: opacity, transform;
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        
+        [class*="stagger-"].animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.3s; }
+        .stagger-5 { transition-delay: 0.4s; }
+        .stagger-6 { transition-delay: 0.5s; }
+        
+        /* Float animation */
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Moving gradient */
+        .moving-gradient {
+            background: linear-gradient(270deg, #ea7a2e, #f59e0b, #fbbf24);
+            background-size: 300% 300%;
+            animation: gradientMove 8s ease infinite;
         }
         
         /* Scroll Reveal Animation */
@@ -161,12 +297,12 @@
             transform: translateY(0);
         }
         
-        /* Enhanced Button Styles */
+        /* Enhanced Button Styles - Warm Feel */
         .btn-primary {
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-            box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.15), 0 2px 4px -1px rgba(245, 158, 11, 0.1);
+            background: linear-gradient(135deg, #ea7a2e 0%, #f59e0b 100%);
+            box-shadow: 0 4px 6px -1px rgba(234, 122, 46, 0.2), 0 2px 4px -1px rgba(234, 122, 46, 0.15);
         }
         
         .btn-primary::before {
@@ -177,7 +313,7 @@
             width: 0;
             height: 0;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.25);
             transform: translate(-50%, -50%);
             transition: width 0.6s, height 0.6s;
         }
@@ -188,9 +324,9 @@
         }
         
         .btn-primary:hover {
-            background: linear-gradient(135deg, #fbbf24 0%, #fcd34d 100%);
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.2), 0 4px 6px -2px rgba(245, 158, 11, 0.15), 0 0 10px rgba(245, 158, 11, 0.15);
+            box-shadow: 0 10px 15px -3px rgba(234, 122, 46, 0.25), 0 4px 6px -2px rgba(234, 122, 46, 0.2), 0 0 10px rgba(234, 122, 46, 0.2);
         }
         
         .btn-primary:active {
@@ -298,14 +434,33 @@
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        /* Improved Card Hover Effects */
+        /* Improved Card Hover Effects - Warm Feel */
         .card-hover {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            will-change: transform, box-shadow;
+        }
+        
+        .card-hover::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+        
+        .card-hover:hover::before {
+            transform: translateX(200%);
         }
         
         .card-hover:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 10px rgba(245, 158, 11, 0.05);
+            box-shadow: 0 20px 40px rgba(107, 93, 82, 0.12), 0 0 10px rgba(234, 122, 46, 0.08);
         }
         
         /* Image Styling */
@@ -329,8 +484,35 @@
         /* Performance: GPU acceleration for animations */
         .card-hover,
         .btn-primary,
-        .reveal {
-            will-change: transform;
+        .reveal,
+        .fade-up,
+        .slide-left,
+        .slide-right,
+        .scale-in {
+            backface-visibility: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            .fade-up, .slide-left, .slide-right, .scale-in,
+            [class*="stagger-"], .float {
+                animation: none !important;
+                transition: opacity 0.3s ease !important;
+                transform: none !important;
+            }
+            
+            .fade-up:not(.animate),
+            .slide-left:not(.animate),
+            .slide-right:not(.animate),
+            .scale-in:not(.animate) {
+                opacity: 0;
+            }
+            
+            .animate {
+                opacity: 1 !important;
+            }
         }
         
         /* Reduce motion for users who prefer it */
@@ -353,10 +535,10 @@
             }
         }
         
-        /* Enhanced Focus States for Accessibility */
+        /* Enhanced Focus States for Accessibility - Warm Feel */
         a:focus-visible,
         button:focus-visible {
-            outline: 2px solid #f59e0b;
+            outline: 2px solid #ea7a2e;
             outline-offset: 4px;
             border-radius: 2px;
         }
@@ -366,10 +548,10 @@
             scroll-behavior: smooth;
         }
         
-        /* Better Selection Styling */
+        /* Better Selection Styling - Warm Feel */
         ::selection {
-            background-color: #f59e0b;
-            color: #111827;
+            background-color: #ea7a2e;
+            color: #fffefb;
         }
         
         /* Improved Gradient Overlays */
@@ -377,22 +559,22 @@
             background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.9) 100%);
         }
         
-        /* Enhanced Border Glow */
+        /* Enhanced Border Glow - Warm Feel */
         .border-glow {
-            box-shadow: 0 0 10px rgba(245, 158, 11, 0.1);
+            box-shadow: 0 0 10px rgba(234, 122, 46, 0.15);
         }
         
         .border-glow:hover {
-            box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+            box-shadow: 0 0 15px rgba(234, 122, 46, 0.25);
         }
         
-        /* Skip to content link for accessibility */
+        /* Skip to content link for accessibility - Warm Feel */
         .skip-link {
             position: absolute;
             top: -40px;
             left: 0;
-            background: #f59e0b;
-            color: #111827;
+            background: #ea7a2e;
+            color: #fffefb;
             padding: 8px;
             text-decoration: none;
             z-index: 100;
@@ -402,23 +584,23 @@
             top: 0;
         }
         
-        /* Improved Mobile Menu Animation */
+        /* Improved Mobile Menu Animation - Warm Feel */
         #mobile-menu {
             transition: all 0.3s ease-in-out;
             transform-origin: top;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            background: rgba(248, 249, 250, 0.95);
+            background: rgba(250, 248, 245, 0.95);
         }
         
         #mobile-menu:not(.hidden) {
             animation: slideDown 0.3s ease-out;
         }
         
-        /* Enhanced blur effect for mobile menu */
+        /* Enhanced blur effect for mobile menu - Warm Feel */
         @supports (backdrop-filter: blur(20px)) {
             #mobile-menu {
-                background: rgba(248, 249, 250, 0.9);
+                background: rgba(250, 248, 245, 0.9);
             }
         }
         
@@ -438,9 +620,59 @@
             letter-spacing: -0.02em;
         }
         
-        /* Enhanced Link Underline Animation */
+        /* Enhanced Paragraph Visibility - Light Mode (Darker/Brighter) */
+        [data-theme="light"] p {
+            color: #4a4238 !important;
+        }
+        
+        [data-theme="light"] p.text-txt-sub {
+            color: #4a4238 !important;
+        }
+        
+        [data-theme="light"] li.text-txt-sub {
+            color: #4a4238 !important;
+        }
+        
+        [data-theme="light"] span.text-txt-sub {
+            color: #4a4238 !important;
+        }
+        
+        /* Enhanced Paragraph Visibility - Dark Mode (Lighter/Brighter) */
+        [data-theme="dark"] p {
+            color: #d1d1d1 !important;
+        }
+        
+        [data-theme="dark"] p.text-txt-sub {
+            color: #d1d1d1 !important;
+        }
+        
+        [data-theme="dark"] li.text-txt-sub {
+            color: #d1d1d1 !important;
+        }
+        
+        [data-theme="dark"] span.text-txt-sub {
+            color: #d1d1d1 !important;
+        }
+        
+        /* Enhanced Link Underline Animation - Warm Feel */
         .link-underline {
             position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .link-underline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(234, 122, 46, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .link-underline:hover::before {
+            left: 100%;
         }
         
         .link-underline::after {
@@ -450,8 +682,12 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #f59e0b;
-            transition: width 0.3s ease;
+            background: linear-gradient(90deg, #ea7a2e, #f59e0b);
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .link-underline:hover {
+            transform: translateY(-1px);
         }
         
         .link-underline:hover::after {
@@ -754,31 +990,31 @@
             background: linear-gradient(to right, var(--surface-bg), transparent) !important;
         }
         
-        /* Light Theme Button Styling */
+        /* Light Theme Button Styling - Warm Feel */
         [data-theme="light"] .btn-consultation {
             background-color: transparent;
-            color: rgb(245, 158, 11);
-            border-color: rgb(245, 158, 11);
+            color: rgb(234, 122, 46);
+            border-color: rgb(234, 122, 46);
         }
         
         [data-theme="light"] .btn-consultation:hover {
             background-color: transparent;
-            border-color: rgb(245, 158, 11);
-            color: rgb(245, 158, 11);
-            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3), 
-                        0 0 30px rgba(245, 158, 11, 0.15),
-                        inset 0 0 10px rgba(245, 158, 11, 0.05);
+            border-color: rgb(234, 122, 46);
+            color: rgb(234, 122, 46);
+            box-shadow: 0 0 15px rgba(234, 122, 46, 0.35), 
+                        0 0 30px rgba(234, 122, 46, 0.2),
+                        inset 0 0 10px rgba(234, 122, 46, 0.08);
         }
         
         [data-theme="light"] .btn-consultation:active {
-            box-shadow: 0 0 8px rgba(245, 158, 11, 0.2), 
-                        inset 0 0 5px rgba(245, 158, 11, 0.05);
+            box-shadow: 0 0 8px rgba(234, 122, 46, 0.25), 
+                        inset 0 0 5px rgba(234, 122, 46, 0.08);
         }
         
         [data-theme="light"] .btn-consultation:focus-visible {
-            outline-color: rgb(245, 158, 11);
-            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3), 
-                        0 0 30px rgba(245, 158, 11, 0.15);
+            outline-color: rgb(234, 122, 46);
+            box-shadow: 0 0 15px rgba(234, 122, 46, 0.35), 
+                        0 0 30px rgba(234, 122, 46, 0.2);
         }
         
         /* Dark Theme Button Styling */
@@ -863,7 +1099,7 @@
 </head>
 <body class="font-sans text-txt-main antialiased bg-page selection:bg-accent selection:text-txt-main">
     <!-- Top Bar -->
-    <div class="bg-gray-50 text-txt-sub py-3 border-b border-gray-200 hidden md:block">
+    <div class="bg-surface2 text-txt-sub py-3 border-b hidden md:block" style="border-color: rgba(107, 93, 82, 0.2);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm font-medium tracking-wide">
             <div class="flex items-center space-x-6">
                 <a href="tel:+919876543210" class="hover:text-accent transition-colors flex items-center gap-2" aria-label="Call Irfan at +91 98765 43210">
@@ -884,17 +1120,17 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="sticky top-0 w-full z-50 bg-page/95 backdrop-blur-md border-b border-gray-200 transition-all duration-300 shadow-sm" id="navbar">
+    <nav class="sticky top-0 w-full z-50 bg-page/95 backdrop-blur-md border-b transition-all duration-300 shadow-sm fade" id="navbar" style="border-color: rgba(107, 93, 82, 0.2);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 md:h-20 items-center">
                 <div class="flex-shrink-0 flex items-center h-full">
-                    <a href="#hero" class="font-heading text-2xl md:text-3xl font-bold tracking-tight text-txt-main flex items-center h-full" aria-label="Irfan.in - Home">
+                    <a href="#hero" class="font-heading text-2xl md:text-3xl font-bold tracking-tight text-txt-main flex items-center h-full slide-left" aria-label="Irfan.in - Home">
                         IRFAN<span class="text-accent">.</span>
                     </a>
                 </div>
                 
                 <!-- Desktop Menu -->
-                <nav class="hidden md:flex space-x-8 items-center" aria-label="Main navigation">
+                <nav class="hidden md:flex space-x-8 items-center slide-right" aria-label="Main navigation">
                     <a href="#hero" class="link-underline text-sm font-bold uppercase tracking-wider text-txt-sub hover:text-txt-main pb-1 transition-all">Home</a>
                     <a href="#about" class="link-underline text-sm font-bold uppercase tracking-wider text-txt-sub hover:text-txt-main pb-1 transition-all">About</a>
                     <a href="#services" class="link-underline text-sm font-bold uppercase tracking-wider text-txt-sub hover:text-txt-main pb-1 transition-all">Services</a>
@@ -909,7 +1145,7 @@
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-txt-main hover:text-accent focus:outline-none transition-colors duration-300 p-2 rounded-md hover:bg-gray-100" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <button id="mobile-menu-btn" class="text-txt-main hover:text-accent focus:outline-none transition-colors duration-300 p-2 rounded-md hover:bg-surface2" aria-label="Toggle mobile menu" aria-expanded="false">
                         <i class="fas fa-bars text-2xl transition-transform duration-300" id="menu-icon" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -917,13 +1153,13 @@
         </div>
 
         <!-- Mobile Menu Panel -->
-        <nav id="mobile-menu" class="hidden md:hidden bg-surface/95 backdrop-blur-xl border-t border-gray-200 absolute w-full shadow-2xl" aria-label="Mobile navigation" style="backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+        <nav id="mobile-menu" class="hidden md:hidden bg-surface/95 backdrop-blur-xl border-t absolute w-full shadow-2xl" aria-label="Mobile navigation" style="backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-color: rgba(107, 93, 82, 0.2);">
             <div class="px-4 pt-2 pb-6 space-y-1 relative z-10">
-                <a href="#hero" class="block px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 transition-all duration-200 rounded-md">Home</a>
-                <a href="#about" class="block px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 transition-all duration-200 rounded-md">About</a>
-                <a href="#services" class="block px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 transition-all duration-200 rounded-md">Services</a>
-                <a href="#how-we-work" class="block px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 transition-all duration-200 rounded-md">Process</a>
-                <button id="theme-toggle-mobile" class="block w-full px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent transition-all duration-200 rounded-md text-left">
+                <a href="#hero" class="block px-3 py-3 border-b text-base font-medium text-txt-main hover:text-accent hover:bg-surface2 transition-all duration-200 rounded-md" style="border-color: rgba(107, 93, 82, 0.2);">Home</a>
+                <a href="#about" class="block px-3 py-3 border-b text-base font-medium text-txt-main hover:text-accent hover:bg-surface2 transition-all duration-200 rounded-md" style="border-color: rgba(107, 93, 82, 0.2);">About</a>
+                <a href="#services" class="block px-3 py-3 border-b text-base font-medium text-txt-main hover:text-accent hover:bg-surface2 transition-all duration-200 rounded-md" style="border-color: rgba(107, 93, 82, 0.2);">Services</a>
+                <a href="#how-we-work" class="block px-3 py-3 border-b text-base font-medium text-txt-main hover:text-accent hover:bg-surface2 transition-all duration-200 rounded-md" style="border-color: rgba(107, 93, 82, 0.2);">Process</a>
+                <button id="theme-toggle-mobile" class="block w-full px-3 py-3 border-b text-base font-medium text-txt-main hover:text-accent transition-all duration-200 rounded-md text-left" style="border-color: rgba(107, 93, 82, 0.2);">
                     <i class="fas fa-sun mr-2" id="theme-icon-mobile" aria-hidden="true"></i> Toggle Theme
                 </button>
                 <a href="#contact" class="btn-consultation block px-3 py-3 mt-4 text-center text-sm font-bold uppercase tracking-widest">Book Consultation</a>
@@ -932,27 +1168,27 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative pt-12 pb-12 sm:pt-16 sm:pb-16 md:pt-20 md:pb-20 lg:pt-32 lg:pb-28 overflow-hidden bg-page">
+    <section id="hero" class="relative pt-12 pb-12 sm:pt-16 sm:pb-16 md:pt-20 md:pb-20 lg:pt-32 lg:pb-28 overflow-hidden bg-page fade-up">
         <!-- Background Decorations -->
         <div class="absolute top-0 left-0 w-full h-full -z-10 bg-pattern"></div>
-        <!-- Ambient Glow -->
-        <div class="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <!-- Ambient Glow - Warm Feel -->
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-accent/8 rounded-full blur-[100px] pointer-events-none float"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
                 <!-- Text Content -->
-                <div class="space-y-6 sm:space-y-8 animate-fade-in-up order-1 lg:order-1 reveal">
-                    <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-txt-main">
+                <div class="space-y-6 sm:space-y-8 order-1 lg:order-1 slide-left">
+                    <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-txt-main stagger-1">
                         Business Growth Consultant
-                        <span class="text-lg md:text-xl lg:text-2xl font-sans font-light text-gray-600 block mt-2">Entrepreneur & Visionary</span>
+                        <span class="text-lg md:text-xl lg:text-2xl font-sans font-light text-txt-sub block mt-2 stagger-2">Entrepreneur & Visionary</span>
                     </h1>
                     
-                    <p class="text-base sm:text-lg lg:text-xl text-txt-sub max-w-lg leading-relaxed font-light">
+                    <p class="text-base sm:text-lg lg:text-xl text-txt-sub max-w-lg leading-relaxed font-light stagger-3">
                         Helping businesses increase sales with innovative marketing & sales systems.
                     </p>
 
                     <!-- Process Flow Visual - Refined -->
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 text-xs sm:text-sm font-bold text-txt-main py-3 sm:py-4">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 text-xs sm:text-sm font-bold text-txt-main py-3 sm:py-4 stagger-4">
                         <div class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Leads</div>
                         <div class="hidden sm:block text-accent">→</div>
                         <div class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Follow-up</div>
@@ -960,33 +1196,37 @@
                         <div class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Conversion</div>
                     </div>
 
-                    <blockquote class="border-l-4 border-accent pl-4 sm:pl-6 py-2 bg-gradient-to-r from-surface to-transparent hover:border-accent-light transition-colors duration-300">
+                    <blockquote class="border-l-4 border-accent pl-4 sm:pl-6 py-2 bg-gradient-to-r from-surface2/50 to-transparent hover:border-accent-light transition-colors duration-300 stagger-5">
                         <p class="text-lg sm:text-xl lg:text-2xl font-heading text-txt-main italic">
                             "Most businesses generate leads but fail to convert them — I make sure yours don't."
                         </p>
                     </blockquote>
 
-                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4 stagger-6">
                     <a href="#contact" class="btn-consultation inline-flex justify-center items-center px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest w-full sm:w-auto">
                         Book a Consultation
                         <i class="fas fa-arrow-right ml-2 transition-transform" aria-hidden="true"></i>
                     </a>
-                        <a href="#about" class="inline-flex justify-center items-center px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-txt-main border border-gray-300 hover:border-accent hover:text-accent transition-all duration-300 bg-transparent hover:bg-gray-50 w-full sm:w-auto">
+                        <a href="#about" class="inline-flex justify-center items-center px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-txt-main border hover:border-accent hover:text-accent transition-all duration-300 bg-transparent hover:bg-surface2 w-full sm:w-auto" style="border-color: rgba(107, 93, 82, 0.3);">
                             Learn More
                         </a>
                     </div>
                 </div>
 
                 <!-- Image Placeholder -->
-                <div class="order-1 lg:order-2 relative lg:h-[600px] flex items-center justify-center mb-8 sm:mb-0 reveal animate-slide-in-right">
-                    <div class="relative w-full max-w-sm sm:max-w-md mx-auto aspect-[4/5] bg-surface2 rounded-sm overflow-hidden border border-gray-200 shadow-2xl group hover:border-accent/50 transition-all duration-500">
-                        <!-- Placeholder Content -->
-                        <div class="absolute inset-0 text-gray-400 bg-surface overflow-hidden">
-                            <div style="height: 30px;"></div>
-                            <img src="image.png" alt="Irfan - Business Growth Consultant" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
-                        </div>
+                <div class="order-1 lg:order-2 relative lg:h-[600px] flex items-center justify-center mb-8 sm:mb-0 slide-right">
+                    <div class="relative w-full max-w-sm sm:max-w-md mx-auto">
+                        <!-- Glow Effect Background -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent-light/20 rounded-sm blur-2xl transform rotate-6 -z-10"></div>
                         
-
+                        <div class="relative w-full aspect-[4/5] rounded-sm overflow-hidden shadow-2xl group transition-all duration-500">
+                            <!-- Background with opacity -->
+                            <div class="absolute inset-0 bg-surface2 rounded-sm border opacity-50 group-hover:border-accent/50 transition-all duration-500" style="border-color: rgba(107, 93, 82, 0.3);"></div>
+                            <!-- Image with full opacity -->
+                            <div class="relative w-full h-full overflow-hidden">
+                                <img src="image.png" alt="Irfan - Business Growth Consultant" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-100">
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- Decorative Frame -->
@@ -998,15 +1238,15 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-12 sm:py-16 md:py-20 lg:py-28 bg-surface border-t border-gray-200">
+    <section id="about" class="py-12 sm:py-16 md:py-20 lg:py-28 bg-surface border-t fade-up" style="border-color: rgba(107, 93, 82, 0.2);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
                 
                 <!-- Image/Visual Column -->
-                <div class="relative order-2 lg:order-1">
+                <div class="relative order-2 lg:order-1 slide-left">
                     <div class="relative w-full aspect-square max-w-lg mx-auto">
                         <!-- Main Image Placeholder -->
-                        <div class="absolute inset-0 bg-surface2 border border-gray-200 flex flex-col items-center justify-center text-gray-400 overflow-hidden">
+                        <div class="absolute inset-0 bg-surface2 border flex flex-col items-center justify-center text-txt-muted overflow-hidden" style="border-color: rgba(107, 93, 82, 0.25);">
                              <img src="./WhatsApp Image 2025-12-21 at 12.52.44 AM.jpeg" alt="Irfan's workspace showing business growth systems and automation tools" loading="lazy" decoding="async" class="object-cover w-full h-full">
                         </div>
                         
@@ -1015,11 +1255,11 @@
                 </div>
 
                 <!-- Text Content Column -->
-                <div class="space-y-6 sm:space-y-8 order-1 lg:order-2">
+                <div class="space-y-6 sm:space-y-8 order-1 lg:order-2 slide-right">
                     <div class="space-y-2">
-                        <h4 class="text-accent font-bold tracking-widest uppercase text-xs">Who is Irfan?</h4>
-                        <h2 class="font-heading text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-txt-main">About Irfan – Your Business Growth Partner</h2>
-                        <div class="w-20 h-0.5 bg-accent"></div>
+                        <h4 class="text-accent font-bold tracking-widest uppercase text-xs stagger-1">Who is Irfan?</h4>
+                        <h2 class="font-heading text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-txt-main stagger-2">About Irfan – Your Business Growth Partner</h2>
+                        <div class="w-20 h-0.5 bg-accent stagger-3"></div>
                     </div>
 
                     <div class="prose prose-lg text-txt-sub font-light text-sm sm:text-base">
@@ -1048,18 +1288,18 @@
     </section>
 
     <!-- Services Overview -->
-    <section id="services" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-page relative">
+    <section id="services" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-page relative fade-up">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16">
-                <span class="text-accent font-bold tracking-widest uppercase text-xs">Expertise</span>
-                <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-3 mb-4 sm:mb-6 text-txt-main text-glow-strong">How I Help You Win</h2>
-                <div class="w-12 h-0.5 bg-accent mx-auto"></div>
+                <span class="text-accent font-bold tracking-widest uppercase text-xs stagger-1">Expertise</span>
+                <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-3 mb-4 sm:mb-6 text-txt-main text-glow-strong stagger-2">How I Help You Win</h2>
+                <div class="w-12 h-0.5 bg-accent mx-auto stagger-3"></div>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Card 1 -->
-                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border border-gray-200 hover:border-accent/30 group reveal shadow-sm">
-                    <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
+                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border hover:border-accent/30 group shadow-sm stagger-1" style="border-color: rgba(107, 93, 82, 0.25);">
+                    <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 float" aria-hidden="true">
                         <i class="fas fa-chess-knight"></i>
                     </div>
                     <h3 class="font-heading text-lg sm:text-xl lg:text-2xl font-bold text-txt-main mb-3 sm:mb-4">Strategic Planning</h3>
@@ -1067,8 +1307,8 @@
                 </article>
 
                 <!-- Card 2 -->
-                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border-t-4 border-accent hover:border-t-accent hover:border-gray-200 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] group reveal">
-                    <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
+                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border-t-4 border-accent hover:border-t-accent shadow-[0_10px_40px_-10px_rgba(107,93,82,0.12)] group stagger-2" style="border-color: rgba(107, 93, 82, 0.25);">
+                    <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 float" aria-hidden="true">
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3 class="font-heading text-lg sm:text-xl lg:text-2xl font-bold text-txt-main mb-3 sm:mb-4">Automation Systems</h3>
@@ -1076,8 +1316,8 @@
                 </article>
 
                 <!-- Card 3 -->
-                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border border-gray-200 hover:border-accent/30 group reveal shadow-sm">
-                    <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
+                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border hover:border-accent/30 group shadow-sm stagger-3" style="border-color: rgba(107, 93, 82, 0.25);">
+                    <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 float" aria-hidden="true">
                         <i class="fas fa-chart-pie"></i>
                     </div>
                     <h3 class="font-heading text-lg sm:text-xl lg:text-2xl font-bold text-txt-main mb-3 sm:mb-4">Revenue Optimization</h3>
@@ -1088,22 +1328,22 @@
     </section>
 
     <!-- How We Work Section -->
-    <section id="how-we-work" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-surface border-t border-gray-200 relative overflow-hidden">
+    <section id="how-we-work" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-surface border-t relative overflow-hidden fade-up" style="border-color: rgba(107, 93, 82, 0.2);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Section Header -->
             <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-                <span class="text-accent font-bold tracking-widest uppercase text-xs">Process</span>
-                <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 mb-3 text-txt-main text-glow-strong">How We Work</h2>
-                <p class="text-txt-sub text-sm sm:text-base font-light">
+                <span class="text-accent font-bold tracking-widest uppercase text-xs stagger-1">Process</span>
+                <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 mb-3 text-txt-main text-glow-strong stagger-2">How We Work</h2>
+                <p class="text-txt-sub text-sm sm:text-base font-light stagger-3">
                     Turning Leads into Sales with Smart Systems
                 </p>
-                <div class="w-12 h-0.5 bg-accent mx-auto mt-3"></div>
+                <div class="w-12 h-0.5 bg-accent mx-auto mt-3 stagger-4"></div>
             </div>
 
             <!-- Process Steps - Compact Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 max-w-6xl mx-auto">
                 <!-- Step 1 -->
-                <div class="reveal bg-surface p-5 sm:p-6 border border-gray-200 hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1">
+                <div class="reveal bg-surface p-5 sm:p-6 border hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1" style="border-color: rgba(107, 93, 82, 0.25);">
                     <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
                         <span class="text-txt-muted font-normal mr-2">01.</span>Business Understanding
                     </h3>
@@ -1124,7 +1364,7 @@
                 </div>
 
                 <!-- Step 2 -->
-                <div class="reveal bg-surface p-5 sm:p-6 border border-gray-200 hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1">
+                <div class="reveal bg-surface p-5 sm:p-6 border hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1" style="border-color: rgba(107, 93, 82, 0.25);">
                     <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
                         <span class="text-txt-muted font-normal mr-2">02.</span>Strategy & Roadmap
                     </h3>
@@ -1145,7 +1385,7 @@
                 </div>
 
                 <!-- Step 3 -->
-                <div class="reveal bg-surface p-5 sm:p-6 border border-gray-200 hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1">
+                <div class="reveal bg-surface p-5 sm:p-6 border hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1" style="border-color: rgba(107, 93, 82, 0.25);">
                     <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
                         <span class="text-txt-muted font-normal mr-2">03.</span>System Implementation
                     </h3>
@@ -1169,7 +1409,7 @@
                 <div class="hidden lg:block"></div>
 
                 <!-- Step 4 -->
-                <div class="reveal bg-surface p-5 sm:p-6 border border-gray-200 hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-start-2 lg:col-span-1">
+                <div class="reveal bg-surface p-5 sm:p-6 border hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-start-2 lg:col-span-1" style="border-color: rgba(107, 93, 82, 0.25);">
                     <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
                         <span class="text-txt-muted font-normal mr-2">04.</span>Conversion Optimization
                     </h3>
@@ -1190,7 +1430,7 @@
                 </div>
 
                 <!-- Step 5 -->
-                <div class="reveal bg-surface p-5 sm:p-6 border border-gray-200 hover:border-accent/30 transition-all duration-300 shadow-sm card-hover md:col-span-2 lg:col-span-1 lg:col-start-3">
+                <div class="reveal bg-surface p-5 sm:p-6 border hover:border-accent/30 transition-all duration-300 shadow-sm card-hover md:col-span-2 lg:col-span-1 lg:col-start-3" style="border-color: rgba(107, 93, 82, 0.25);">
                     <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
                         <span class="text-txt-muted font-normal mr-2">05.</span>Review & Scale
                     </h3>
@@ -1213,7 +1453,7 @@
 
             <!-- Tagline -->
             <div class="text-center reveal">
-                <blockquote class="border-l-4 border-accent pl-4 sm:pl-6 py-3 bg-gradient-to-r from-surface to-transparent hover:border-accent-light transition-colors duration-300 max-w-2xl mx-auto">
+                <blockquote class="border-l-4 border-accent pl-4 sm:pl-6 py-3 bg-gradient-to-r from-surface2/50 to-transparent hover:border-accent-light transition-colors duration-300 max-w-2xl mx-auto">
                     <p class="text-base sm:text-lg lg:text-xl font-heading text-txt-main italic">
                         "We don't run ads. We build systems that convert leads into sales."
                     </p>
@@ -1223,20 +1463,20 @@
     </section>
 
     <!-- Contact CTA Section -->
-    <section id="contact" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-surface2 relative overflow-hidden border-t border-gray-200">
+    <section id="contact" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-surface2 relative overflow-hidden border-t fade-up" style="border-color: rgba(107, 93, 82, 0.2);">
         <!-- Abstract Cube Texture -->
         <div class="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         
         <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
-            <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 sm:mb-8 text-txt-main text-glow">Stop Losing Leads Today.</h2>
-            <p class="text-txt-sub text-base sm:text-lg mb-8 sm:mb-12 max-w-2xl mx-auto font-light">
+            <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 sm:mb-8 text-txt-main text-glow stagger-1">Stop Losing Leads Today.</h2>
+            <p class="text-txt-sub text-base sm:text-lg mb-8 sm:mb-12 max-w-2xl mx-auto font-light stagger-2">
                 Your business deserves a system that works as hard as you do. Book a consultation and let's map out your growth.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+            <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 stagger-3">
                 <a href="#contact" class="btn-consultation inline-flex justify-center items-center px-6 sm:px-10 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest w-full sm:w-auto">
                     Book Consultation
                 </a>
-                <a href="https://wa.me/919876543210?text=Hi%20Irfan,%20I%20would%20like%20to%20discuss%20business%20growth%20opportunities" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-6 sm:px-10 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-txt-main border border-gray-300 hover:border-accent hover:text-accent transition-all duration-300 hover:bg-gray-50 w-full sm:w-auto">
+                <a href="https://wa.me/919876543210?text=Hi%20Irfan,%20I%20would%20like%20to%20discuss%20business%20growth%20opportunities" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-6 sm:px-10 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-txt-main border hover:border-accent hover:text-accent transition-all duration-300 hover:bg-surface2 w-full sm:w-auto" style="border-color: rgba(107, 93, 82, 0.3);">
                     <i class="fab fa-whatsapp mr-3" aria-hidden="true"></i> WhatsApp Chat
                 </a>
             </div>
@@ -1244,7 +1484,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-50 text-gray-600 py-12 sm:py-16 border-t border-gray-200">
+    <footer class="bg-surface2 text-txt-sub py-12 sm:py-16 border-t" style="border-color: rgba(107, 93, 82, 0.2);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8">
                 <div class="text-center md:text-left">
@@ -1386,25 +1626,61 @@
             }
         });
         
-        // Scroll Reveal Animation (optimized with IntersectionObserver)
+        // Enhanced Scroll Reveal Animation (optimized with IntersectionObserver)
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.15,
+            rootMargin: '0px 0px -80px 0px'
         };
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
+                    const element = entry.target;
+                    
+                    // Handle reveal class
+                    if (element.classList.contains('reveal')) {
+                        element.classList.add('active');
+                    }
+                    
+                    // Handle scroll-triggered animation classes
+                    if (element.classList.contains('fade-up')) {
+                        element.classList.add('animate');
+                    } else if (element.classList.contains('fade')) {
+                        element.classList.add('animate');
+                    } else if (element.classList.contains('slide-left')) {
+                        element.classList.add('animate');
+                    } else if (element.classList.contains('slide-right')) {
+                        element.classList.add('animate');
+                    } else if (element.classList.contains('scale-in')) {
+                        element.classList.add('animate');
+                    }
+                    
+                    // Trigger staggered animations for child elements
+                    const staggerElements = element.querySelectorAll('[class*="stagger-"]');
+                    staggerElements.forEach((el, index) => {
+                        setTimeout(() => {
+                            el.classList.add('animate');
+                        }, index * 100);
+                    });
+                    
                     // Unobserve after animation to improve performance
-                    observer.unobserve(entry.target);
+                    observer.unobserve(element);
                 }
             });
         }, observerOptions);
         
-        // Observe all reveal elements
-        document.querySelectorAll('.reveal').forEach(el => {
+        // Observe all reveal and animation elements
+        document.querySelectorAll('.reveal, .fade-up, .fade, .slide-left, .slide-right, .scale-in').forEach(el => {
             observer.observe(el);
+        });
+        
+        // Animate fade elements on page load (for header/nav)
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.fade').forEach(el => {
+                setTimeout(() => {
+                    el.classList.add('animate');
+                }, 100);
+            });
         });
         
         // Image Loading Animation (optimized)
