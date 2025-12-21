@@ -10,8 +10,8 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     
     <!-- Theme Color -->
-    <meta name="theme-color" content="#f59e0b" />
-    <meta name="msapplication-TileColor" content="#f59e0b" />
+    <meta name="theme-color" content="#ea7a2e" />
+    <meta name="msapplication-TileColor" content="#ea7a2e" />
     
     <!-- SEO & Meta Tags -->
     <meta name="description" content="Irfan is a Business Growth Consultant and Entrepreneur helping businesses increase sales with innovative marketing & sales systems." />
@@ -58,22 +58,22 @@
             theme: {
                 extend: {
                     colors: {
-                        // Light Theme Palette
-                        page: '#f9fafb',       // Main Background (Gray-50)
-                        surface: '#ffffff',    // Card/Section Background (White)
-                        surface2: '#f3f4f6',   // Lighter Surface for hover/borders
+                        // Light Theme Palette - Warm Feel
+                        page: '#faf8f5',       // Main Background (Warm Cream)
+                        surface: '#fffefb',    // Card/Section Background (Warm White)
+                        surface2: '#f5f3f0',   // Lighter Surface for hover/borders (Warm Beige)
                         
                         txt: {
-                            main: '#111827',   // Main Headings (Gray-900)
-                            sub: '#6b7280',    // Body Text (Gray-500)
-                            muted: '#9ca3af',  // Subtle Text
+                            main: '#1a1816',   // Main Headings (Warm Dark Brown)
+                            sub: '#6b5d52',    // Body Text (Warm Gray-Brown)
+                            muted: '#9c8e82',  // Subtle Text (Warm Taupe)
                         },
                         
                         accent: {
-                            DEFAULT: '#f59e0b', // Amber-500
-                            light: '#fbbf24',
+                            DEFAULT: '#ea7a2e', // Warm Orange
+                            light: '#f59e0b',
                             dark: '#d97706',
-                            hover: '#fcd34d'
+                            hover: '#fbbf24'
                         }
                     },
                     fontFamily: {
@@ -88,21 +88,21 @@
         }
     </script>
     <style>
-        /* Light Pattern Background */
+        /* Light Pattern Background - Warm Feel */
         .bg-pattern {
             background-color: transparent;
-            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-image: radial-gradient(#e8ddd4 1px, transparent 1px);
             background-size: 30px 30px;
-            opacity: 0.4;
+            opacity: 0.35;
         }
         
-        /* Enhanced Text Effects */
+        /* Enhanced Text Effects - Warm Feel */
         .text-glow {
-            text-shadow: 0 0 10px rgba(245, 158, 11, 0.15);
+            text-shadow: 0 0 10px rgba(234, 122, 46, 0.2);
         }
         
         .text-glow-strong {
-            text-shadow: 0 0 15px rgba(245, 158, 11, 0.25), 0 0 30px rgba(245, 158, 11, 0.1);
+            text-shadow: 0 0 15px rgba(234, 122, 46, 0.3), 0 0 30px rgba(234, 122, 46, 0.15);
         }
         
         /* Smooth Animations */
@@ -161,12 +161,12 @@
             transform: translateY(0);
         }
         
-        /* Enhanced Button Styles */
+        /* Enhanced Button Styles - Warm Feel */
         .btn-primary {
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-            box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.15), 0 2px 4px -1px rgba(245, 158, 11, 0.1);
+            background: linear-gradient(135deg, #ea7a2e 0%, #f59e0b 100%);
+            box-shadow: 0 4px 6px -1px rgba(234, 122, 46, 0.2), 0 2px 4px -1px rgba(234, 122, 46, 0.15);
         }
         
         .btn-primary::before {
@@ -177,7 +177,7 @@
             width: 0;
             height: 0;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.25);
             transform: translate(-50%, -50%);
             transition: width 0.6s, height 0.6s;
         }
@@ -188,9 +188,9 @@
         }
         
         .btn-primary:hover {
-            background: linear-gradient(135deg, #fbbf24 0%, #fcd34d 100%);
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.2), 0 4px 6px -2px rgba(245, 158, 11, 0.15), 0 0 10px rgba(245, 158, 11, 0.15);
+            box-shadow: 0 10px 15px -3px rgba(234, 122, 46, 0.25), 0 4px 6px -2px rgba(234, 122, 46, 0.2), 0 0 10px rgba(234, 122, 46, 0.2);
         }
         
         .btn-primary:active {
@@ -298,86 +298,14 @@
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        /* Improved Card Hover Effects */
+        /* Improved Card Hover Effects - Warm Feel */
         .card-hover {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .card-hover:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 10px rgba(245, 158, 11, 0.05);
-        }
-        
-        /* Mobile Scroll Hover Effects - Apply hover styles when element is in center of viewport */
-        @media (max-width: 768px) {
-            .card-hover.mobile-hover-active {
-                transform: translateY(-8px);
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 10px rgba(245, 158, 11, 0.05);
-            }
-            
-            .btn-primary.mobile-hover-active {
-                background: linear-gradient(135deg, #fbbf24 0%, #fcd34d 100%);
-                transform: translateY(-2px);
-                box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.2), 0 4px 6px -2px rgba(245, 158, 11, 0.15), 0 0 10px rgba(245, 158, 11, 0.15);
-            }
-            
-            .btn-consultation.mobile-hover-active {
-                background-color: rgba(10, 10, 10, 0.95);
-                border-color: #f3cf55;
-                color: #f3cf55;
-                box-shadow: 0 0 30px rgba(212, 175, 55, 0.6), 
-                            0 0 60px rgba(212, 175, 55, 0.3),
-                            inset 0 0 20px rgba(212, 175, 55, 0.1);
-                transform: translateY(-2px) scale(1.02);
-            }
-            
-            [data-theme="light"] .btn-consultation.mobile-hover-active {
-                background-color: transparent;
-                border-color: rgb(245, 158, 11);
-                color: rgb(245, 158, 11);
-                box-shadow: 0 0 15px rgba(245, 158, 11, 0.3), 
-                            0 0 30px rgba(245, 158, 11, 0.15),
-                            inset 0 0 10px rgba(245, 158, 11, 0.05);
-            }
-            
-            /* Group hover effects on mobile - when parent has mobile-hover-active, apply group-hover styles */
-            /* Target icon elements that should scale on hover */
-            .group.mobile-hover-active > div[class*="text-accent"] i,
-            .group.mobile-hover-active article > div[class*="text-accent"] i {
-                transform: scale(1.1);
-            }
-            
-            /* Target images that should scale on hover */
-            .group.mobile-hover-active img {
-                transform: scale(1.05);
-            }
-            
-            /* Target arrow icons that should translate */
-            .group.mobile-hover-active .fa-long-arrow-alt-right {
-                transform: translateX(0.5rem);
-            }
-            
-            /* Target border effects */
-            .group.mobile-hover-active[class*="hover:border-accent"] {
-                border-color: rgba(245, 158, 11, 0.5);
-            }
-            
-            /* Apply group-hover effects when group-hover-active class is added */
-            .group-hover-active[class*="group-hover:scale-110"] {
-                transform: scale(1.1) !important;
-            }
-            
-            .group-hover-active[class*="group-hover:scale-105"] {
-                transform: scale(1.05) !important;
-            }
-            
-            .group-hover-active[class*="group-hover:translate-x-2"] {
-                transform: translateX(0.5rem) !important;
-            }
-            
-            .border-glow.mobile-hover-active {
-                box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
-            }
+            box-shadow: 0 20px 40px rgba(107, 93, 82, 0.12), 0 0 10px rgba(234, 122, 46, 0.08);
         }
         
         /* Image Styling */
@@ -425,10 +353,10 @@
             }
         }
         
-        /* Enhanced Focus States for Accessibility */
+        /* Enhanced Focus States for Accessibility - Warm Feel */
         a:focus-visible,
         button:focus-visible {
-            outline: 2px solid #f59e0b;
+            outline: 2px solid #ea7a2e;
             outline-offset: 4px;
             border-radius: 2px;
         }
@@ -438,10 +366,10 @@
             scroll-behavior: smooth;
         }
         
-        /* Better Selection Styling */
+        /* Better Selection Styling - Warm Feel */
         ::selection {
-            background-color: #f59e0b;
-            color: #111827;
+            background-color: #ea7a2e;
+            color: #fffefb;
         }
         
         /* Improved Gradient Overlays */
@@ -449,22 +377,22 @@
             background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.9) 100%);
         }
         
-        /* Enhanced Border Glow */
+        /* Enhanced Border Glow - Warm Feel */
         .border-glow {
-            box-shadow: 0 0 10px rgba(245, 158, 11, 0.1);
+            box-shadow: 0 0 10px rgba(234, 122, 46, 0.15);
         }
         
         .border-glow:hover {
-            box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+            box-shadow: 0 0 15px rgba(234, 122, 46, 0.25);
         }
         
-        /* Skip to content link for accessibility */
+        /* Skip to content link for accessibility - Warm Feel */
         .skip-link {
             position: absolute;
             top: -40px;
             left: 0;
-            background: #f59e0b;
-            color: #111827;
+            background: #ea7a2e;
+            color: #fffefb;
             padding: 8px;
             text-decoration: none;
             z-index: 100;
@@ -474,23 +402,23 @@
             top: 0;
         }
         
-        /* Improved Mobile Menu Animation */
+        /* Improved Mobile Menu Animation - Warm Feel */
         #mobile-menu {
             transition: all 0.3s ease-in-out;
             transform-origin: top;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            background: rgba(248, 249, 250, 0.95);
+            background: rgba(250, 248, 245, 0.95);
         }
         
         #mobile-menu:not(.hidden) {
             animation: slideDown 0.3s ease-out;
         }
         
-        /* Enhanced blur effect for mobile menu */
+        /* Enhanced blur effect for mobile menu - Warm Feel */
         @supports (backdrop-filter: blur(20px)) {
             #mobile-menu {
-                background: rgba(248, 249, 250, 0.9);
+                background: rgba(250, 248, 245, 0.9);
             }
         }
         
@@ -510,7 +438,7 @@
             letter-spacing: -0.02em;
         }
         
-        /* Enhanced Link Underline Animation */
+        /* Enhanced Link Underline Animation - Warm Feel */
         .link-underline {
             position: relative;
         }
@@ -522,7 +450,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #f59e0b;
+            background: #ea7a2e;
             transition: width 0.3s ease;
         }
         
@@ -826,31 +754,31 @@
             background: linear-gradient(to right, var(--surface-bg), transparent) !important;
         }
         
-        /* Light Theme Button Styling */
+        /* Light Theme Button Styling - Warm Feel */
         [data-theme="light"] .btn-consultation {
             background-color: transparent;
-            color: rgb(245, 158, 11);
-            border-color: rgb(245, 158, 11);
+            color: rgb(234, 122, 46);
+            border-color: rgb(234, 122, 46);
         }
         
         [data-theme="light"] .btn-consultation:hover {
             background-color: transparent;
-            border-color: rgb(245, 158, 11);
-            color: rgb(245, 158, 11);
-            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3), 
-                        0 0 30px rgba(245, 158, 11, 0.15),
-                        inset 0 0 10px rgba(245, 158, 11, 0.05);
+            border-color: rgb(234, 122, 46);
+            color: rgb(234, 122, 46);
+            box-shadow: 0 0 15px rgba(234, 122, 46, 0.35), 
+                        0 0 30px rgba(234, 122, 46, 0.2),
+                        inset 0 0 10px rgba(234, 122, 46, 0.08);
         }
         
         [data-theme="light"] .btn-consultation:active {
-            box-shadow: 0 0 8px rgba(245, 158, 11, 0.2), 
-                        inset 0 0 5px rgba(245, 158, 11, 0.05);
+            box-shadow: 0 0 8px rgba(234, 122, 46, 0.25), 
+                        inset 0 0 5px rgba(234, 122, 46, 0.08);
         }
         
         [data-theme="light"] .btn-consultation:focus-visible {
-            outline-color: rgb(245, 158, 11);
-            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3), 
-                        0 0 30px rgba(245, 158, 11, 0.15);
+            outline-color: rgb(234, 122, 46);
+            box-shadow: 0 0 15px rgba(234, 122, 46, 0.35), 
+                        0 0 30px rgba(234, 122, 46, 0.2);
         }
         
         /* Dark Theme Button Styling */
@@ -935,7 +863,7 @@
 </head>
 <body class="font-sans text-txt-main antialiased bg-page selection:bg-accent selection:text-txt-main">
     <!-- Top Bar -->
-    <div class="bg-gray-50 text-txt-sub py-3 border-b border-gray-200 hidden md:block">
+    <div class="bg-surface2 text-txt-sub py-3 border-b hidden md:block" style="border-color: rgba(107, 93, 82, 0.2);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm font-medium tracking-wide">
             <div class="flex items-center space-x-6">
                 <a href="tel:+919876543210" class="hover:text-accent transition-colors flex items-center gap-2" aria-label="Call Irfan at +91 98765 43210">
@@ -956,7 +884,7 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="sticky top-0 w-full z-50 bg-page/95 backdrop-blur-md border-b border-gray-200 transition-all duration-300 shadow-sm" id="navbar">
+    <nav class="sticky top-0 w-full z-50 bg-page/95 backdrop-blur-md border-b transition-all duration-300 shadow-sm" id="navbar" style="border-color: rgba(107, 93, 82, 0.2);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 md:h-20 items-center">
                 <div class="flex-shrink-0 flex items-center h-full">
@@ -981,7 +909,7 @@
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-txt-main hover:text-accent focus:outline-none transition-colors duration-300 p-2 rounded-md hover:bg-gray-100" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <button id="mobile-menu-btn" class="text-txt-main hover:text-accent focus:outline-none transition-colors duration-300 p-2 rounded-md hover:bg-surface2" aria-label="Toggle mobile menu" aria-expanded="false">
                         <i class="fas fa-bars text-2xl transition-transform duration-300" id="menu-icon" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -989,13 +917,13 @@
         </div>
 
         <!-- Mobile Menu Panel -->
-        <nav id="mobile-menu" class="hidden md:hidden bg-surface/95 backdrop-blur-xl border-t border-gray-200 absolute w-full shadow-2xl" aria-label="Mobile navigation" style="backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+        <nav id="mobile-menu" class="hidden md:hidden bg-surface/95 backdrop-blur-xl border-t absolute w-full shadow-2xl" aria-label="Mobile navigation" style="backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-color: rgba(107, 93, 82, 0.2);">
             <div class="px-4 pt-2 pb-6 space-y-1 relative z-10">
-                <a href="#hero" class="block px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 transition-all duration-200 rounded-md">Home</a>
-                <a href="#about" class="block px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 transition-all duration-200 rounded-md">About</a>
-                <a href="#services" class="block px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 transition-all duration-200 rounded-md">Services</a>
-                <a href="#how-we-work" class="block px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent hover:bg-gray-50 transition-all duration-200 rounded-md">Process</a>
-                <button id="theme-toggle-mobile" class="block w-full px-3 py-3 border-b border-gray-200 text-base font-medium text-gray-700 hover:text-accent transition-all duration-200 rounded-md text-left">
+                <a href="#hero" class="block px-3 py-3 border-b text-base font-medium text-txt-main hover:text-accent hover:bg-surface2 transition-all duration-200 rounded-md" style="border-color: rgba(107, 93, 82, 0.2);">Home</a>
+                <a href="#about" class="block px-3 py-3 border-b text-base font-medium text-txt-main hover:text-accent hover:bg-surface2 transition-all duration-200 rounded-md" style="border-color: rgba(107, 93, 82, 0.2);">About</a>
+                <a href="#services" class="block px-3 py-3 border-b text-base font-medium text-txt-main hover:text-accent hover:bg-surface2 transition-all duration-200 rounded-md" style="border-color: rgba(107, 93, 82, 0.2);">Services</a>
+                <a href="#how-we-work" class="block px-3 py-3 border-b text-base font-medium text-txt-main hover:text-accent hover:bg-surface2 transition-all duration-200 rounded-md" style="border-color: rgba(107, 93, 82, 0.2);">Process</a>
+                <button id="theme-toggle-mobile" class="block w-full px-3 py-3 border-b text-base font-medium text-txt-main hover:text-accent transition-all duration-200 rounded-md text-left" style="border-color: rgba(107, 93, 82, 0.2);">
                     <i class="fas fa-sun mr-2" id="theme-icon-mobile" aria-hidden="true"></i> Toggle Theme
                 </button>
                 <a href="#contact" class="btn-consultation block px-3 py-3 mt-4 text-center text-sm font-bold uppercase tracking-widest">Book Consultation</a>
@@ -1007,8 +935,8 @@
     <section id="hero" class="relative pt-12 pb-12 sm:pt-16 sm:pb-16 md:pt-20 md:pb-20 lg:pt-32 lg:pb-28 overflow-hidden bg-page">
         <!-- Background Decorations -->
         <div class="absolute top-0 left-0 w-full h-full -z-10 bg-pattern"></div>
-        <!-- Ambient Glow -->
-        <div class="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <!-- Ambient Glow - Warm Feel -->
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-accent/8 rounded-full blur-[100px] pointer-events-none"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
@@ -1016,7 +944,7 @@
                 <div class="space-y-6 sm:space-y-8 animate-fade-in-up order-1 lg:order-1 reveal">
                     <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-txt-main">
                         Business Growth Consultant
-                        <span class="text-lg md:text-xl lg:text-2xl font-sans font-light text-gray-600 block mt-2">Entrepreneur & Visionary</span>
+                        <span class="text-lg md:text-xl lg:text-2xl font-sans font-light text-txt-sub block mt-2">Entrepreneur & Visionary</span>
                     </h1>
                     
                     <p class="text-base sm:text-lg lg:text-xl text-txt-sub max-w-lg leading-relaxed font-light">
@@ -1032,7 +960,7 @@
                         <div class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Conversion</div>
                     </div>
 
-                    <blockquote class="border-l-4 border-accent pl-4 sm:pl-6 py-2 bg-gradient-to-r from-surface to-transparent hover:border-accent-light transition-colors duration-300">
+                    <blockquote class="border-l-4 border-accent pl-4 sm:pl-6 py-2 bg-gradient-to-r from-surface2/50 to-transparent hover:border-accent-light transition-colors duration-300">
                         <p class="text-lg sm:text-xl lg:text-2xl font-heading text-txt-main italic">
                             "Most businesses generate leads but fail to convert them — I make sure yours don't."
                         </p>
@@ -1043,7 +971,7 @@
                         Book a Consultation
                         <i class="fas fa-arrow-right ml-2 transition-transform" aria-hidden="true"></i>
                     </a>
-                        <a href="#about" class="inline-flex justify-center items-center px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-txt-main border border-gray-300 hover:border-accent hover:text-accent transition-all duration-300 bg-transparent hover:bg-gray-50 w-full sm:w-auto">
+                        <a href="#about" class="inline-flex justify-center items-center px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-txt-main border hover:border-accent hover:text-accent transition-all duration-300 bg-transparent hover:bg-surface2 w-full sm:w-auto" style="border-color: rgba(107, 93, 82, 0.3);">
                             Learn More
                         </a>
                     </div>
@@ -1051,14 +979,18 @@
 
                 <!-- Image Placeholder -->
                 <div class="order-1 lg:order-2 relative lg:h-[600px] flex items-center justify-center mb-8 sm:mb-0 reveal animate-slide-in-right">
-                    <div class="relative w-full max-w-sm sm:max-w-md mx-auto aspect-[4/5] bg-surface2 rounded-sm overflow-hidden border border-gray-200 shadow-2xl group hover:border-accent/50 transition-all duration-500">
-                        <!-- Placeholder Content -->
-                        <div class="absolute inset-0 text-gray-400 bg-surface overflow-hidden">
-                            <div style="height: 30px;"></div>
-                            <img src="image.png" alt="Irfan - Business Growth Consultant" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
-                        </div>
+                    <div class="relative w-full max-w-sm sm:max-w-md mx-auto">
+                        <!-- Glow Effect Background -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent-light/20 rounded-sm blur-2xl transform rotate-6 -z-10"></div>
                         
-
+                        <div class="relative w-full aspect-[4/5] rounded-sm overflow-hidden shadow-2xl group transition-all duration-500">
+                            <!-- Background with opacity -->
+                            <div class="absolute inset-0 bg-surface2 rounded-sm border opacity-50 group-hover:border-accent/50 transition-all duration-500" style="border-color: rgba(107, 93, 82, 0.3);"></div>
+                            <!-- Image with full opacity -->
+                            <div class="relative w-full h-full overflow-hidden">
+                                <img src="image.png" alt="Irfan - Business Growth Consultant" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-100">
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- Decorative Frame -->
@@ -1070,7 +1002,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-12 sm:py-16 md:py-20 lg:py-28 bg-surface border-t border-gray-200">
+    <section id="about" class="py-12 sm:py-16 md:py-20 lg:py-28 bg-surface border-t" style="border-color: rgba(107, 93, 82, 0.2);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
                 
@@ -1078,7 +1010,7 @@
                 <div class="relative order-2 lg:order-1">
                     <div class="relative w-full aspect-square max-w-lg mx-auto">
                         <!-- Main Image Placeholder -->
-                        <div class="absolute inset-0 bg-surface2 border border-gray-200 flex flex-col items-center justify-center text-gray-400 overflow-hidden">
+                        <div class="absolute inset-0 bg-surface2 border flex flex-col items-center justify-center text-txt-muted overflow-hidden" style="border-color: rgba(107, 93, 82, 0.25);">
                              <img src="./WhatsApp Image 2025-12-21 at 12.52.44 AM.jpeg" alt="Irfan's workspace showing business growth systems and automation tools" loading="lazy" decoding="async" class="object-cover w-full h-full">
                         </div>
                         
@@ -1130,7 +1062,7 @@
 
             <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Card 1 -->
-                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border border-gray-200 hover:border-accent/30 group reveal shadow-sm">
+                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border hover:border-accent/30 group reveal shadow-sm" style="border-color: rgba(107, 93, 82, 0.25);">
                     <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
                         <i class="fas fa-chess-knight"></i>
                     </div>
@@ -1139,7 +1071,7 @@
                 </article>
 
                 <!-- Card 2 -->
-                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border-t-4 border-accent hover:border-t-accent hover:border-gray-200 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] group reveal">
+                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border-t-4 border-accent hover:border-t-accent shadow-[0_10px_40px_-10px_rgba(107,93,82,0.12)] group reveal" style="border-color: rgba(107, 93, 82, 0.25);">
                     <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
                         <i class="fas fa-cogs"></i>
                     </div>
@@ -1148,7 +1080,7 @@
                 </article>
 
                 <!-- Card 3 -->
-                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border border-gray-200 hover:border-accent/30 group reveal shadow-sm">
+                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border hover:border-accent/30 group reveal shadow-sm" style="border-color: rgba(107, 93, 82, 0.25);">
                     <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
                         <i class="fas fa-chart-pie"></i>
                     </div>
@@ -1160,7 +1092,7 @@
     </section>
 
     <!-- How We Work Section -->
-    <section id="how-we-work" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-surface border-t border-gray-200 relative overflow-hidden">
+    <section id="how-we-work" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-surface border-t relative overflow-hidden" style="border-color: rgba(107, 93, 82, 0.2);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Section Header -->
             <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
@@ -1175,7 +1107,7 @@
             <!-- Process Steps - Compact Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 max-w-6xl mx-auto">
                 <!-- Step 1 -->
-                <div class="reveal bg-surface p-5 sm:p-6 border border-gray-200 hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1">
+                <div class="reveal bg-surface p-5 sm:p-6 border hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1" style="border-color: rgba(107, 93, 82, 0.25);">
                     <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
                         <span class="text-txt-muted font-normal mr-2">01.</span>Business Understanding
                     </h3>
@@ -1196,7 +1128,7 @@
                 </div>
 
                 <!-- Step 2 -->
-                <div class="reveal bg-surface p-5 sm:p-6 border border-gray-200 hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1">
+                <div class="reveal bg-surface p-5 sm:p-6 border hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1" style="border-color: rgba(107, 93, 82, 0.25);">
                     <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
                         <span class="text-txt-muted font-normal mr-2">02.</span>Strategy & Roadmap
                     </h3>
@@ -1217,7 +1149,7 @@
                 </div>
 
                 <!-- Step 3 -->
-                <div class="reveal bg-surface p-5 sm:p-6 border border-gray-200 hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1">
+                <div class="reveal bg-surface p-5 sm:p-6 border hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1" style="border-color: rgba(107, 93, 82, 0.25);">
                     <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
                         <span class="text-txt-muted font-normal mr-2">03.</span>System Implementation
                     </h3>
@@ -1241,7 +1173,7 @@
                 <div class="hidden lg:block"></div>
 
                 <!-- Step 4 -->
-                <div class="reveal bg-surface p-5 sm:p-6 border border-gray-200 hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-start-2 lg:col-span-1">
+                <div class="reveal bg-surface p-5 sm:p-6 border hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-start-2 lg:col-span-1" style="border-color: rgba(107, 93, 82, 0.25);">
                     <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
                         <span class="text-txt-muted font-normal mr-2">04.</span>Conversion Optimization
                     </h3>
@@ -1262,7 +1194,7 @@
                 </div>
 
                 <!-- Step 5 -->
-                <div class="reveal bg-surface p-5 sm:p-6 border border-gray-200 hover:border-accent/30 transition-all duration-300 shadow-sm card-hover md:col-span-2 lg:col-span-1 lg:col-start-3">
+                <div class="reveal bg-surface p-5 sm:p-6 border hover:border-accent/30 transition-all duration-300 shadow-sm card-hover md:col-span-2 lg:col-span-1 lg:col-start-3" style="border-color: rgba(107, 93, 82, 0.25);">
                     <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
                         <span class="text-txt-muted font-normal mr-2">05.</span>Review & Scale
                     </h3>
@@ -1285,7 +1217,7 @@
 
             <!-- Tagline -->
             <div class="text-center reveal">
-                <blockquote class="border-l-4 border-accent pl-4 sm:pl-6 py-3 bg-gradient-to-r from-surface to-transparent hover:border-accent-light transition-colors duration-300 max-w-2xl mx-auto">
+                <blockquote class="border-l-4 border-accent pl-4 sm:pl-6 py-3 bg-gradient-to-r from-surface2/50 to-transparent hover:border-accent-light transition-colors duration-300 max-w-2xl mx-auto">
                     <p class="text-base sm:text-lg lg:text-xl font-heading text-txt-main italic">
                         "We don't run ads. We build systems that convert leads into sales."
                     </p>
@@ -1295,7 +1227,7 @@
     </section>
 
     <!-- Contact CTA Section -->
-    <section id="contact" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-surface2 relative overflow-hidden border-t border-gray-200">
+    <section id="contact" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-surface2 relative overflow-hidden border-t" style="border-color: rgba(107, 93, 82, 0.2);">
         <!-- Abstract Cube Texture -->
         <div class="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         
@@ -1308,7 +1240,7 @@
                 <a href="#contact" class="btn-consultation inline-flex justify-center items-center px-6 sm:px-10 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest w-full sm:w-auto">
                     Book Consultation
                 </a>
-                <a href="https://wa.me/919876543210?text=Hi%20Irfan,%20I%20would%20like%20to%20discuss%20business%20growth%20opportunities" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-6 sm:px-10 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-txt-main border border-gray-300 hover:border-accent hover:text-accent transition-all duration-300 hover:bg-gray-50 w-full sm:w-auto">
+                <a href="https://wa.me/919876543210?text=Hi%20Irfan,%20I%20would%20like%20to%20discuss%20business%20growth%20opportunities" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-6 sm:px-10 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-widest text-txt-main border hover:border-accent hover:text-accent transition-all duration-300 hover:bg-surface2 w-full sm:w-auto" style="border-color: rgba(107, 93, 82, 0.3);">
                     <i class="fab fa-whatsapp mr-3" aria-hidden="true"></i> WhatsApp Chat
                 </a>
             </div>
@@ -1316,7 +1248,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-50 text-gray-600 py-12 sm:py-16 border-t border-gray-200">
+    <footer class="bg-surface2 text-txt-sub py-12 sm:py-16 border-t" style="border-color: rgba(107, 93, 82, 0.2);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8">
                 <div class="text-center md:text-left">
@@ -1537,156 +1469,6 @@
                 });
             });
         }
-        
-        // Mobile Scroll Hover Animation - Trigger hover effects when elements are in center of viewport
-        (function() {
-            // Detect if we're on mobile
-            const isMobile = () => {
-                return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            };
-            
-            // Only run on mobile devices
-            if (!isMobile()) return;
-            
-            // Elements that should have hover animations on scroll
-            const hoverElements = document.querySelectorAll('.card-hover, .btn-primary, .btn-consultation, .border-glow, .group');
-            
-            if (hoverElements.length === 0) return;
-            
-            // Helper function to apply/remove group-hover effects
-            const applyGroupHoverEffects = (groupElement, apply) => {
-                // Find all children that might have group-hover effects
-                const children = groupElement.querySelectorAll('*');
-                
-                children.forEach(child => {
-                    const classes = child.className || '';
-                    
-                    // Check for scale-110 (icons in service cards)
-                    if (classes.includes('group-hover:scale-110') || 
-                        (child.tagName === 'I' && groupElement.querySelector('div[class*="text-accent"]')?.contains(child))) {
-                        if (apply) {
-                            child.style.transform = 'scale(1.1)';
-                        } else {
-                            child.style.transform = '';
-                        }
-                    }
-                    
-                    // Check for scale-105 (images)
-                    if (classes.includes('group-hover:scale-105') || 
-                        (child.tagName === 'IMG' && groupElement.classList.contains('group'))) {
-                        if (apply) {
-                            child.style.transform = 'scale(1.05)';
-                        } else {
-                            child.style.transform = '';
-                        }
-                    }
-                    
-                    // Check for translate-x-2 (arrows)
-                    if (classes.includes('group-hover:translate-x-2') || 
-                        (child.classList.contains('fa-long-arrow-alt-right'))) {
-                        if (apply) {
-                            child.style.transform = 'translateX(0.5rem)';
-                        } else {
-                            child.style.transform = '';
-                        }
-                    }
-                });
-            };
-            
-            // Create IntersectionObserver to detect when elements are in center of viewport
-            const centerObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    const element = entry.target;
-                    
-                    if (entry.isIntersecting) {
-                        // Check if element is in the center 40% of viewport (30% to 70% from top)
-                        const rect = entry.boundingClientRect;
-                        const viewportHeight = window.innerHeight;
-                        const elementTop = rect.top;
-                        const elementBottom = rect.bottom;
-                        const elementCenter = (elementTop + elementBottom) / 2;
-                        const viewportCenter = viewportHeight / 2;
-                        
-                        // Check if element center is within 20% of viewport center
-                        const distanceFromCenter = Math.abs(elementCenter - viewportCenter);
-                        const threshold = viewportHeight * 0.2; // 20% of viewport height
-                        
-                        if (distanceFromCenter < threshold) {
-                            element.classList.add('mobile-hover-active');
-                            
-                            // For group elements, apply group-hover effects to children
-                            if (element.classList.contains('group')) {
-                                applyGroupHoverEffects(element, true);
-                            }
-                        } else {
-                            element.classList.remove('mobile-hover-active');
-                            
-                            // Remove group-hover effects
-                            if (element.classList.contains('group')) {
-                                applyGroupHoverEffects(element, false);
-                            }
-                        }
-                    } else {
-                        element.classList.remove('mobile-hover-active');
-                        
-                        // Remove group-hover effects
-                        if (element.classList.contains('group')) {
-                            applyGroupHoverEffects(element, false);
-                        }
-                    }
-                });
-            }, {
-                threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-                rootMargin: '0px'
-            });
-            
-            // Observe all hover elements
-            hoverElements.forEach(el => {
-                centerObserver.observe(el);
-            });
-            
-            // Also check on scroll for better responsiveness
-            let scrollTimeout;
-            const handleScroll = () => {
-                clearTimeout(scrollTimeout);
-                scrollTimeout = setTimeout(() => {
-                    hoverElements.forEach(element => {
-                        const rect = element.getBoundingClientRect();
-                        const viewportHeight = window.innerHeight;
-                        const elementTop = rect.top;
-                        const elementBottom = rect.bottom;
-                        const elementCenter = (elementTop + elementBottom) / 2;
-                        const viewportCenter = viewportHeight / 2;
-                        
-                        // Check if element is visible and in center
-                        const isVisible = elementTop < viewportHeight && elementBottom > 0;
-                        const distanceFromCenter = Math.abs(elementCenter - viewportCenter);
-                        const threshold = viewportHeight * 0.2;
-                        
-                        if (isVisible && distanceFromCenter < threshold) {
-                            element.classList.add('mobile-hover-active');
-                            
-                            // For group elements, apply group-hover effects to children
-                            if (element.classList.contains('group')) {
-                                applyGroupHoverEffects(element, true);
-                            }
-                        } else {
-                            element.classList.remove('mobile-hover-active');
-                            
-                            // Remove group-hover effects
-                            if (element.classList.contains('group')) {
-                                applyGroupHoverEffects(element, false);
-                            }
-                        }
-                    });
-                }, 50); // Debounce scroll events
-            };
-            
-            window.addEventListener('scroll', handleScroll, { passive: true });
-            
-            // Initial check
-            handleScroll();
-        })();
     </script>
 </body>
 </html>
