@@ -46,11 +46,11 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="noopener" />
+    <!-- Font Awesome - Updated to latest version -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="noopener" />
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <!-- Google Fonts - Optimized Loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
 
     <script>
@@ -96,6 +96,192 @@
             opacity: 0.35;
         }
         
+        /* Unique Section Dividers */
+        .section-divider {
+            position: relative;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(234, 122, 46, 0.3), transparent);
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            background: #ea7a2e;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .section-divider::before {
+            left: 0;
+        }
+        
+        .section-divider::after {
+            right: 0;
+        }
+        
+        /* Unique Gradient Overlay */
+        .gradient-overlay-section {
+            position: relative;
+        }
+        
+        .gradient-overlay-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(180deg, rgba(250, 248, 245, 0.8) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        [data-theme="dark"] .gradient-overlay-section::before {
+            display: none;
+        }
+        
+        /* Enhanced Card Design */
+        .card-enhanced {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-enhanced::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(234, 122, 46, 0.05) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .card-enhanced:hover::before {
+            opacity: 1;
+        }
+        
+        /* Unique Number Badge */
+        .step-number {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, rgba(234, 122, 46, 0.15) 0%, rgba(245, 158, 11, 0.15) 100%);
+            border-radius: 50%;
+            color: rgba(234, 122, 46, 0.6);
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 2px 6px rgba(234, 122, 46, 0.1);
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(234, 122, 46, 0.2);
+        }
+        
+        .step-number::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(234, 122, 46, 0.1), rgba(245, 158, 11, 0.1));
+            opacity: 0.2;
+            z-index: -1;
+            filter: blur(4px);
+        }
+        
+        /* Diagonal Section Background */
+        .diagonal-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .diagonal-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: linear-gradient(135deg, rgba(234, 122, 46, 0.03) 0%, transparent 100%);
+            transform: rotate(15deg);
+            pointer-events: none;
+        }
+        
+        /* Enhanced Section Spacing */
+        .section-spacing {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .section-spacing {
+                padding-top: 7rem;
+                padding-bottom: 7rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .section-spacing {
+                padding-top: 8rem;
+                padding-bottom: 8rem;
+            }
+        }
+        
+        /* Unique Border Accent */
+        .border-accent-gradient {
+            position: relative;
+        }
+        
+        .border-accent-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ea7a2e, transparent);
+            opacity: 0.5;
+        }
+        
+        /* Process Flow Box */
+        .process-flow-box {
+            border-color: rgba(234, 122, 46, 0.2);
+        }
+        
+        /* Image Glow Effects */
+        .image-glow-gradient {
+            background: linear-gradient(to bottom right, rgba(234, 122, 46, 0.2), rgba(245, 158, 11, 0.2));
+        }
+        
+        .image-glow-border {
+            border-color: rgba(234, 122, 46, 0.2);
+        }
+        
+        .image-glow-circle {
+            background-color: rgba(234, 122, 46, 0.1);
+        }
+        
+        /* Ambient Glow Effects */
+        .ambient-glow-1 {
+            background-color: rgba(234, 122, 46, 0.08);
+        }
+        
+        .ambient-glow-2 {
+            background-color: rgba(245, 158, 11, 0.06);
+        }
+        
+        .ambient-glow-3 {
+            background-color: rgba(234, 122, 46, 0.06);
+        }
+        
         /* Enhanced Text Effects - Warm Feel */
         .text-glow {
             text-shadow: 0 0 10px rgba(234, 122, 46, 0.2);
@@ -105,147 +291,101 @@
             text-shadow: 0 0 15px rgba(234, 122, 46, 0.3), 0 0 30px rgba(234, 122, 46, 0.15);
         }
         
-        /* Smooth Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Prevent horizontal overflow */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+            position: relative;
         }
         
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        /* Ensure sections don't cause overflow */
+        section {
+            overflow-x: hidden;
+            position: relative;
         }
         
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-8px);
-            }
-        }
-        
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
-        @keyframes gradientMove {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-        
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-        
-        .animate-fade-in {
-            animation: fadeIn 1s ease-out forwards;
-        }
-        
-        .animate-slide-in-right {
-            animation: slideInRight 0.8s ease-out forwards;
+        /* Prevent images and media from causing overflow */
+        img, video, iframe {
+            max-width: 100%;
+            height: auto;
         }
         
         /* Scroll-triggered animation classes */
         .fade {
             opacity: 0;
-            transform: scale(0.98);
-            will-change: opacity, transform;
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            transition: opacity 0.6s ease-out;
         }
         
         .fade.animate {
             opacity: 1;
-            transform: scale(1);
         }
         
         .fade-up {
             opacity: 0;
-            transform: translate3d(0, 30px, 0) scale(0.98);
-            will-change: opacity, transform;
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(30px);
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .fade-up.animate {
             opacity: 1;
-            transform: translate3d(0, 0, 0) scale(1);
+            transform: translateY(0);
         }
         
         .slide-left {
             opacity: 0;
-            transform: translate3d(-30px, 0, 0);
-            will-change: opacity, transform;
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(20px);
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @media (min-width: 768px) {
+            .slide-left {
+                transform: translateX(-20px) translateY(0);
+            }
         }
         
         .slide-left.animate {
             opacity: 1;
-            transform: translate3d(0, 0, 0);
+            transform: translateY(0);
+        }
+        
+        @media (min-width: 768px) {
+            .slide-left.animate {
+                transform: translateX(0) translateY(0);
+            }
         }
         
         .slide-right {
             opacity: 0;
-            transform: translate3d(30px, 0, 0);
-            will-change: opacity, transform;
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(20px);
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @media (min-width: 768px) {
+            .slide-right {
+                transform: translateX(20px) translateY(0);
+            }
         }
         
         .slide-right.animate {
             opacity: 1;
-            transform: translate3d(0, 0, 0);
+            transform: translateY(0);
+        }
+        
+        @media (min-width: 768px) {
+            .slide-right.animate {
+                transform: translateX(0) translateY(0);
+            }
         }
         
         .scale-in {
             opacity: 0;
             transform: scale(0.95);
-            will-change: opacity, transform;
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .scale-in.animate {
@@ -253,12 +393,25 @@
             transform: scale(1);
         }
         
-        /* Staggered animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal.animate,
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Stagger animations */
         [class*="stagger-"] {
             opacity: 0;
             transform: translateY(20px);
-            will-change: opacity, transform;
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            transition: opacity 0.5s ease-out,
+                        transform 0.5s ease-out;
         }
         
         [class*="stagger-"].animate {
@@ -266,35 +419,17 @@
             transform: translateY(0);
         }
         
-        .stagger-1 { transition-delay: 0.1s; }
-        .stagger-2 { transition-delay: 0.2s; }
-        .stagger-3 { transition-delay: 0.3s; }
-        .stagger-4 { transition-delay: 0.3s; }
-        .stagger-5 { transition-delay: 0.4s; }
-        .stagger-6 { transition-delay: 0.5s; }
+        /* Stagger delays */
+        .stagger-1.animate { transition-delay: 0.1s; }
+        .stagger-2.animate { transition-delay: 0.2s; }
+        .stagger-3.animate { transition-delay: 0.3s; }
+        .stagger-4.animate { transition-delay: 0.4s; }
+        .stagger-5.animate { transition-delay: 0.5s; }
+        .stagger-6.animate { transition-delay: 0.6s; }
         
-        /* Float animation */
-        .float {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        /* Moving gradient */
+        /* Moving gradient utility */
         .moving-gradient {
             background: linear-gradient(270deg, #ea7a2e, #f59e0b, #fbbf24);
-            background-size: 300% 300%;
-            animation: gradientMove 8s ease infinite;
-        }
-        
-        /* Scroll Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
         }
         
         /* Enhanced Button Styles - Warm Feel */
@@ -325,12 +460,7 @@
         
         .btn-primary:hover {
             background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-            transform: translateY(-2px);
             box-shadow: 0 10px 15px -3px rgba(234, 122, 46, 0.25), 0 4px 6px -2px rgba(234, 122, 46, 0.2), 0 0 10px rgba(234, 122, 46, 0.2);
-        }
-        
-        .btn-primary:active {
-            transform: translateY(0);
         }
         
         /* Premium Dark Button with Gold Text and Border */
@@ -401,7 +531,6 @@
             box-shadow: 0 0 30px rgba(212, 175, 55, 0.6), 
                         0 0 60px rgba(212, 175, 55, 0.3),
                         inset 0 0 20px rgba(212, 175, 55, 0.1);
-            transform: translateY(-2px) scale(1.02);
         }
         
         .btn-consultation:hover::before {
@@ -413,7 +542,6 @@
         }
         
         .btn-consultation:active {
-            transform: translateY(0) scale(0.98);
             box-shadow: 0 0 8px rgba(212, 175, 55, 0.2), 
                         inset 0 0 5px rgba(212, 175, 55, 0.05);
         }
@@ -425,21 +553,22 @@
                         0 0 30px rgba(212, 175, 55, 0.15);
         }
         
-        /* Arrow icon animation */
-        .btn-consultation:hover .fa-arrow-right {
-            transform: translateX(4px);
-        }
-        
-        .btn-consultation .fa-arrow-right {
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
         /* Improved Card Hover Effects - Warm Feel */
         .card-hover {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
             will-change: transform, box-shadow;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .card-hover.animate {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                        box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .card-hover::before {
@@ -454,13 +583,12 @@
             will-change: transform;
         }
         
-        .card-hover:hover::before {
-            transform: translateX(200%);
+        .card-hover:hover {
+            box-shadow: 0 20px 40px rgba(107, 93, 82, 0.12), 0 0 10px rgba(234, 122, 46, 0.08);
         }
         
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(107, 93, 82, 0.12), 0 0 10px rgba(234, 122, 46, 0.08);
+        .card-hover:hover::before {
+            transform: translateX(100%);
         }
         
         /* Image Styling */
@@ -475,44 +603,39 @@
         /* Lazy Loading Images */
         img[loading="lazy"] {
             opacity: 0;
+            transform: scale(0.98);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
         
         img.loaded {
             opacity: 1;
+            transform: scale(1);
         }
         
-        /* Performance: GPU acceleration for animations */
-        .card-hover,
-        .btn-primary,
-        .reveal,
-        .fade-up,
-        .slide-left,
-        .slide-right,
-        .scale-in {
-            backface-visibility: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+        /* Image animation for scroll */
+        .image-animate {
+            opacity: 0;
+            transform: scale(0.98) translateY(20px);
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        /* Reduced motion support */
-        @media (prefers-reduced-motion: reduce) {
-            .fade-up, .slide-left, .slide-right, .scale-in,
-            [class*="stagger-"], .float {
-                animation: none !important;
-                transition: opacity 0.3s ease !important;
-                transform: none !important;
-            }
-            
-            .fade-up:not(.animate),
-            .slide-left:not(.animate),
-            .slide-right:not(.animate),
-            .scale-in:not(.animate) {
-                opacity: 0;
-            }
-            
-            .animate {
-                opacity: 1 !important;
-            }
+        .image-animate.animate {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+        
+        /* Icon animation */
+        .icon-animate {
+            opacity: 0;
+            transform: scale(0.8) translateY(10px);
+            transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .icon-animate.animate {
+            opacity: 1;
+            transform: scale(1) translateY(0);
         }
         
         /* Reduce motion for users who prefer it */
@@ -532,6 +655,39 @@
             
             .btn-consultation:hover {
                 transform: none !important;
+            }
+            
+            .timeline-item,
+            .timeline-marker,
+            .timeline-content,
+            .timeline-title,
+            .timeline-description,
+            .timeline-content ul li,
+            .timeline-bg-number,
+            .fade,
+            .fade-up,
+            .slide-left,
+            .slide-right,
+            .scale-in,
+            .reveal,
+            [class*="stagger-"],
+            .image-animate,
+            .icon-animate,
+            .card-hover {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+                animation: none !important;
+            }
+            
+            .timeline-line {
+                transform: scaleY(1) !important;
+            }
+            
+            @media (min-width: 768px) {
+                .timeline-line {
+                    transform: translateX(-50%) scaleY(1) !important;
+                }
             }
         }
         
@@ -584,34 +740,17 @@
             top: 0;
         }
         
-        /* Improved Mobile Menu Animation - Warm Feel */
+        /* Mobile Menu Styles - Warm Feel */
         #mobile-menu {
-            transition: all 0.3s ease-in-out;
-            transform-origin: top;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             background: rgba(250, 248, 245, 0.95);
-        }
-        
-        #mobile-menu:not(.hidden) {
-            animation: slideDown 0.3s ease-out;
         }
         
         /* Enhanced blur effect for mobile menu - Warm Feel */
         @supports (backdrop-filter: blur(20px)) {
             #mobile-menu {
                 background: rgba(250, 248, 245, 0.9);
-            }
-        }
-        
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
             }
         }
         
@@ -657,22 +796,6 @@
         /* Enhanced Link Underline Animation - Warm Feel */
         .link-underline {
             position: relative;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .link-underline::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(234, 122, 46, 0.1), transparent);
-            transition: left 0.5s;
-        }
-        
-        .link-underline:hover::before {
-            left: 100%;
         }
         
         .link-underline::after {
@@ -682,12 +805,8 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #ea7a2e, #f59e0b);
-            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .link-underline:hover {
-            transform: translateY(-1px);
+            background: #ea7a2e;
+            transition: width 0.3s ease;
         }
         
         .link-underline:hover::after {
@@ -803,34 +922,319 @@
             }
         }
         
-        /* Custom grid layout for How We Work section - 1 1 1 / 0.5 1 1 0.5 */
-        @media (min-width: 1024px) {
-            #how-we-work .grid {
-                grid-template-columns: repeat(8, 1fr);
+        /* Timeline Styles - Simple Vertical Line */
+        .timeline-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+            overflow: hidden;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 2rem;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: rgba(234, 122, 46, 0.2);
+            z-index: 1;
+            transform-origin: top;
+            transform: scaleY(0);
+            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .timeline-container.animate .timeline-line {
+            transform: scaleY(1);
+        }
+        
+        @media (min-width: 768px) {
+            .timeline-line {
+                left: 50%;
+                transform: translateX(-50%) scaleY(0);
             }
             
-            /* First row: steps 1, 2, 3 each span 2 columns, centered (cols 2-3, 4-5, 6-7) */
-            #how-we-work .grid > div:nth-child(1) {
-                grid-column: 2 / 4;
+            .timeline-container.animate .timeline-line {
+                transform: translateX(-50%) scaleY(1);
             }
-            #how-we-work .grid > div:nth-child(2) {
-                grid-column: 4 / 6;
-            }
-            #how-we-work .grid > div:nth-child(3) {
-                grid-column: 6 / 8;
+        }
+        
+        [data-theme="dark"] .timeline-line {
+            background: rgba(212, 175, 55, 0.2);
+        }
+        
+        .timeline-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 3rem;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @media (min-width: 768px) {
+            .timeline-item {
+                justify-content: space-between;
             }
             
-            /* Hide the empty spacer on first row */
-            #how-we-work .grid > div:nth-child(4) {
+            .timeline-item:nth-child(odd) {
+                transform: translateX(-30px) translateY(30px);
+            }
+            
+            .timeline-item:nth-child(even) {
+                flex-direction: row-reverse;
+                transform: translateX(30px) translateY(30px);
+            }
+        }
+        
+        .timeline-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (min-width: 768px) {
+            .timeline-item:nth-child(odd).animate {
+                transform: translateX(0) translateY(0);
+            }
+            
+            .timeline-item:nth-child(even).animate {
+                transform: translateX(0) translateY(0);
+            }
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-marker {
+            position: relative;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--page-bg, #faf8f5);
+            border: 2px solid #ea7a2e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            z-index: 3;
+            margin-left: 0;
+            transform: scale(0);
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        box-shadow 0.3s ease;
+        }
+        
+        .timeline-item.animate .timeline-marker {
+            transform: scale(1);
+            animation: markerPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes markerPulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(234, 122, 46, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(234, 122, 46, 0);
+            }
+        }
+        
+        [data-theme="dark"] .timeline-marker {
+            animation: markerPulseDark 2s ease-in-out infinite;
+        }
+        
+        @keyframes markerPulseDark {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(212, 175, 55, 0);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .timeline-marker {
+                margin-left: 0;
+            }
+        }
+        
+        [data-theme="dark"] .timeline-marker {
+            background: var(--page-bg, #0a0a0a);
+            border-color: #d4af37;
+        }
+        
+        .timeline-marker i {
+            color: #ea7a2e;
+            font-size: 1.25rem;
+        }
+        
+        [data-theme="dark"] .timeline-marker i {
+            color: #d4af37;
+        }
+        
+        .timeline-content {
+            width: 100%;
+            padding-left: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s,
+                        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+        }
+        
+        .timeline-item.animate .timeline-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (min-width: 768px) {
+            .timeline-content {
+                width: calc(41.666667% - 2rem);
+                padding-left: 2rem;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-content {
+                padding-left: 0;
+                padding-right: 2rem;
+                text-align: right;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-content ul {
+                justify-content: flex-end;
+            }
+        }
+        
+        .timeline-bg-number {
+            font-family: var(--font-heading, 'Marcellus', serif);
+            font-size: 6rem;
+            color: rgba(234, 122, 46, 0.1);
+            font-style: italic;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.5s ease 0.3s,
+                        transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s;
+            pointer-events: none;
+            line-height: 1;
+        }
+        
+        @media (max-width: 767px) {
+            .timeline-bg-number {
                 display: none;
             }
-            
-            /* Second row: 0.5 spacer (col 1), step 4 (cols 3-4), step 5 (cols 5-6), 0.5 spacer (col 7) */
-            #how-we-work .grid > div:nth-child(5) {
-                grid-column: 3 / 5;
+        }
+        
+        .timeline-item.animate .timeline-bg-number {
+            opacity: 0.4;
+            transform: scale(1);
+        }
+        
+        .timeline-item:hover .timeline-bg-number {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        
+        [data-theme="dark"] .timeline-bg-number {
+            color: rgba(212, 175, 55, 0.1);
+        }
+        
+        .timeline-title {
+            font-family: var(--font-heading, 'Marcellus', serif);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--txt-main, #1a1816);
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease 0.4s,
+                        transform 0.5s ease 0.4s;
+        }
+        
+        .timeline-item.animate .timeline-title {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (min-width: 768px) {
+            .timeline-item:nth-child(odd) .timeline-title {
+                transform: translateX(-5px) translateY(10px);
             }
-            #how-we-work .grid > div:nth-child(6) {
-                grid-column: 5 / 7;
+            
+            .timeline-item:nth-child(odd).animate .timeline-title {
+                transform: translateX(0) translateY(0);
+            }
+            
+            .timeline-item:nth-child(even) .timeline-title {
+                transform: translateX(5px) translateY(10px);
+            }
+            
+            .timeline-item:nth-child(even).animate .timeline-title {
+                transform: translateX(0) translateY(0);
+            }
+        }
+        
+        [data-theme="dark"] .timeline-title {
+            color: var(--txt-main, #ffffff);
+        }
+        
+        .timeline-description {
+            color: var(--txt-sub, #4a4238);
+            font-size: 0.875rem;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease 0.5s,
+                        transform 0.5s ease 0.5s;
+        }
+        
+        .timeline-item.animate .timeline-description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        [data-theme="dark"] .timeline-description {
+            color: var(--txt-sub, #a3a3a3);
+        }
+        
+        /* Timeline list items animation */
+        .timeline-content ul li {
+            opacity: 0;
+            transform: translateY(5px);
+            transition: opacity 0.4s ease,
+                        transform 0.4s ease;
+        }
+        
+        .timeline-item.animate .timeline-content ul li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-item.animate .timeline-content ul li:nth-child(1) {
+            transition-delay: 0.6s;
+        }
+        
+        .timeline-item.animate .timeline-content ul li:nth-child(2) {
+            transition-delay: 0.7s;
+        }
+        
+        .timeline-item.animate .timeline-content ul li:nth-child(3) {
+            transition-delay: 0.8s;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 767px) {
+            .timeline-content {
+                padding-left: 1.5rem;
+            }
+            
+            .timeline-marker {
+                width: 48px;
+                height: 48px;
+            }
+            
+            .timeline-marker i {
+                font-size: 1rem;
             }
         }
         
@@ -1049,6 +1453,69 @@
         [data-theme="dark"] #theme-toggle-mobile:hover #theme-icon-mobile {
             color: #d4af37 !important;
         }
+        
+        /* Dark Theme Overrides for New Design Elements */
+        [data-theme="dark"] .section-divider {
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+        }
+        
+        [data-theme="dark"] .section-divider::before,
+        [data-theme="dark"] .section-divider::after {
+            background: #d4af37;
+        }
+        
+        [data-theme="dark"] .card-enhanced::before {
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+        }
+        
+        [data-theme="dark"] .step-number {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(243, 207, 85, 0.15) 100%);
+            color: rgba(212, 175, 55, 0.6);
+            box-shadow: 0 2px 6px rgba(212, 175, 55, 0.1);
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+        
+        [data-theme="dark"] .step-number::after {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(243, 207, 85, 0.1));
+        }
+        
+        [data-theme="dark"] .diagonal-bg::before {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, transparent 100%);
+        }
+        
+        [data-theme="dark"] .border-accent-gradient::before {
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        }
+        
+        [data-theme="dark"] .process-flow-box {
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+        
+        /* Dark Theme Image Glow Effects */
+        [data-theme="dark"] .image-glow-gradient {
+            background: linear-gradient(to bottom right, rgba(212, 175, 55, 0.2), rgba(243, 207, 85, 0.2));
+        }
+        
+        [data-theme="dark"] .image-glow-border {
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+        
+        [data-theme="dark"] .image-glow-circle {
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+        
+        /* Dark Theme Ambient Glow Effects */
+        [data-theme="dark"] .ambient-glow-1 {
+            background-color: rgba(212, 175, 55, 0.08);
+        }
+        
+        [data-theme="dark"] .ambient-glow-2 {
+            background-color: rgba(243, 207, 85, 0.06);
+        }
+        
+        [data-theme="dark"] .ambient-glow-3 {
+            background-color: rgba(212, 175, 55, 0.06);
+        }
     </style>
     
     <!-- Structured Data (JSON-LD) -->
@@ -1060,6 +1527,7 @@
         "jobTitle": "Business Growth Consultant",
         "description": "Business Growth Consultant and Entrepreneur helping businesses increase sales with innovative marketing & sales systems.",
         "url": "https://irfan.in",
+        "image": "https://irfan.in/image.png",
         "sameAs": [
             "https://www.facebook.com",
             "https://www.twitter.com",
@@ -1070,10 +1538,12 @@
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Calicut",
+            "addressRegion": "Kerala",
             "addressCountry": "IN"
         },
         "email": "contact@irfan.com",
-        "telephone": "+919876543210"
+        "telephone": "+919876543210",
+        "knowsAbout": ["Business Growth", "Marketing Automation", "Sales Systems", "Lead Conversion", "Digital Marketing"]
     }
     </script>
     
@@ -1097,9 +1567,10 @@
         })();
     </script>
 </head>
-<body class="font-sans text-txt-main antialiased bg-page selection:bg-accent selection:text-txt-main">
+    <body class="font-sans text-txt-main antialiased bg-page selection:bg-accent selection:text-txt-main">
+
     <!-- Top Bar -->
-    <div class="bg-surface2 text-txt-sub py-3 border-b hidden md:block" style="border-color: rgba(107, 93, 82, 0.2);">
+    <div class="bg-surface2 text-txt-sub py-3 border-b border-gray-200 hidden md:block" style="border-color: rgba(107, 93, 82, 0.2);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm font-medium tracking-wide">
             <div class="flex items-center space-x-6">
                 <a href="tel:+919876543210" class="hover:text-accent transition-colors flex items-center gap-2" aria-label="Call Irfan at +91 98765 43210">
@@ -1113,14 +1584,14 @@
                 <a href="https://www.facebook.com" target="_blank" class="hover:text-accent transition-colors" aria-label="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                 <a href="https://www.twitter.com" target="_blank" class="hover:text-accent transition-colors" aria-label="Twitter" rel="noopener noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                 <a href="https://www.instagram.com" target="_blank" class="hover:text-accent transition-colors" aria-label="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com" target="_blank" class="hover:text-accent transition-colors" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="https://www.linkediSn.com" target="_blank" class="hover:text-accent transition-colors" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                 <a href="https://www.youtube.com" target="_blank" class="hover:text-accent transition-colors" aria-label="YouTube" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i></a>
             </nav>
         </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="sticky top-0 w-full z-50 bg-page/95 backdrop-blur-md border-b transition-all duration-300 shadow-sm fade" id="navbar" style="border-color: rgba(107, 93, 82, 0.2);">
+    <nav class="fixed md:sticky top-0 left-0 right-0 w-full z-50 bg-page/95 backdrop-blur-md border-b border-gray-200 transition-all duration-300 shadow-sm" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 md:h-20 items-center">
                 <div class="flex-shrink-0 flex items-center h-full">
@@ -1168,11 +1639,15 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative pt-12 pb-12 sm:pt-16 sm:pb-16 md:pt-20 md:pb-20 lg:pt-32 lg:pb-28 overflow-hidden bg-page fade-up">
+    <main id="main-content">
+    <section id="hero" class="relative pt-20 pb-12 sm:pt-24 sm:pb-16 md:pt-20 md:pb-20 lg:pt-32 lg:pb-28 overflow-hidden bg-page fade-up">
         <!-- Background Decorations -->
         <div class="absolute top-0 left-0 w-full h-full -z-10 bg-pattern"></div>
         <!-- Ambient Glow - Warm Feel -->
-        <div class="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-accent/8 rounded-full blur-[100px] pointer-events-none float"></div>
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-accent/8 rounded-full blur-[100px] pointer-events-none ambient-glow-1"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-48 h-48 md:w-72 md:h-72 bg-accent-light/6 rounded-full blur-[80px] pointer-events-none ambient-glow-2"></div>
+        <!-- Diagonal Background Accent -->
+        <div class="absolute top-0 right-0 w-1/2 h-full -z-10 diagonal-bg opacity-50"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
@@ -1188,12 +1663,27 @@
                     </p>
 
                     <!-- Process Flow Visual - Refined -->
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 text-xs sm:text-sm font-bold text-txt-main py-3 sm:py-4 stagger-4">
-                        <div class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Leads</div>
-                        <div class="hidden sm:block text-accent">→</div>
-                        <div class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Follow-up</div>
-                        <div class="hidden sm:block text-accent">→</div>
-                        <div class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Conversion</div>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-6 text-xs sm:text-sm font-bold text-txt-main py-4 sm:py-6 px-4 sm:px-6 bg-surface/50 rounded-lg border border-accent/20 process-flow-box stagger-4">
+                        <div class="flex items-center group">
+                            <div class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center mr-2 group-hover:bg-accent/30 transition-colors">
+                                <i class="fas fa-check text-accent text-xs"></i>
+                            </div>
+                            <span>Leads</span>
+                        </div>
+                        <div class="hidden sm:block text-accent text-lg">→</div>
+                        <div class="flex items-center group">
+                            <div class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center mr-2 group-hover:bg-accent/30 transition-colors">
+                                <i class="fas fa-check text-accent text-xs"></i>
+                            </div>
+                            <span>Follow-up</span>
+                        </div>
+                        <div class="hidden sm:block text-accent text-lg">→</div>
+                        <div class="flex items-center group">
+                            <div class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center mr-2 group-hover:bg-accent/30 transition-colors">
+                                <i class="fas fa-check text-accent text-xs"></i>
+                            </div>
+                            <span>Conversion</span>
+                        </div>
                     </div>
 
                     <blockquote class="border-l-4 border-accent pl-4 sm:pl-6 py-2 bg-gradient-to-r from-surface2/50 to-transparent hover:border-accent-light transition-colors duration-300 stagger-5">
@@ -1217,37 +1707,37 @@
                 <div class="order-1 lg:order-2 relative lg:h-[600px] flex items-center justify-center mb-8 sm:mb-0 slide-right">
                     <div class="relative w-full max-w-sm sm:max-w-md mx-auto">
                         <!-- Glow Effect Background -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent-light/20 rounded-sm blur-2xl transform rotate-6 -z-10"></div>
+                        <div class="absolute inset-0 image-glow-gradient rounded-sm blur-2xl transform rotate-6 -z-10"></div>
                         
                         <div class="relative w-full aspect-[4/5] rounded-sm overflow-hidden shadow-2xl group transition-all duration-500">
                             <!-- Background with opacity -->
                             <div class="absolute inset-0 bg-surface2 rounded-sm border opacity-50 group-hover:border-accent/50 transition-all duration-500" style="border-color: rgba(107, 93, 82, 0.3);"></div>
                             <!-- Image with full opacity -->
                             <div class="relative w-full h-full overflow-hidden">
-                                <img src="image.png" alt="Irfan - Business Growth Consultant" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-100">
+                                <img src="image.png" alt="Irfan - Business Growth Consultant" width="400" height="500" fetchpriority="high" decoding="async" loading="eager" class="w-full h-full object-cover object-center opacity-100">
                             </div>
                         </div>
                     </div>
                     
                     <!-- Decorative Frame -->
-                    <div class="absolute -z-10 top-10 -right-6 w-full h-full border-2 border-accent/20 hidden lg:block"></div>
-                    <div class="absolute -z-10 -bottom-10 -left-6 w-32 h-32 sm:w-40 sm:h-40 bg-accent/10 rounded-full blur-3xl"></div>
+                    <div class="absolute -z-10 top-10 -right-6 w-full h-full border-2 image-glow-border hidden lg:block"></div>
+                    <div class="absolute -z-10 -bottom-10 -left-6 w-32 h-32 sm:w-40 sm:h-40 image-glow-circle rounded-full blur-3xl"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-12 sm:py-16 md:py-20 lg:py-28 bg-surface border-t fade-up" style="border-color: rgba(107, 93, 82, 0.2);">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" class="py-12 sm:py-16 md:py-20 lg:py-28 bg-surface border-t fade-up border-accent-gradient" style="border-color: rgba(107, 93, 82, 0.2);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
                 
                 <!-- Image/Visual Column -->
                 <div class="relative order-2 lg:order-1 slide-left">
-                    <div class="relative w-full aspect-square max-w-lg mx-auto">
+                    <div class="relative w-full aspect-square max-w-lg mx-auto image-animate">
                         <!-- Main Image Placeholder -->
                         <div class="absolute inset-0 bg-surface2 border flex flex-col items-center justify-center text-txt-muted overflow-hidden" style="border-color: rgba(107, 93, 82, 0.25);">
-                             <img src="./WhatsApp Image 2025-12-21 at 12.52.44 AM.jpeg" alt="Irfan's workspace showing business growth systems and automation tools" loading="lazy" decoding="async" class="object-cover w-full h-full">
+                             <img src="./WhatsApp Image 2025-12-21 at 12.52.44 AM.jpeg" alt="Irfan's workspace showing business growth systems and automation tools" width="600" height="600" loading="lazy" decoding="async" class="object-cover w-full h-full">
                         </div>
                         
                         
@@ -1257,29 +1747,28 @@
                 <!-- Text Content Column -->
                 <div class="space-y-6 sm:space-y-8 order-1 lg:order-2 slide-right">
                     <div class="space-y-2">
-                        <h4 class="text-accent font-bold tracking-widest uppercase text-xs stagger-1">Who is Irfan?</h4>
-                        <h2 class="font-heading text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-txt-main stagger-2">About Irfan – Your Business Growth Partner</h2>
+                        <h2 class="font-heading text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-txt-main stagger-2">Your Business Growth Partner</h2>
                         <div class="w-20 h-0.5 bg-accent stagger-3"></div>
                     </div>
 
                     <div class="prose prose-lg text-txt-sub font-light text-sm sm:text-base">
                         <p class="font-medium text-txt-main text-base sm:text-lg">
-                            Hi, I'm Irfan, from Calicut, India. I help business owners increase sales by creating complete business growth systems.
+                            Hi, I'm Irfan, from Calicut, India.
                         </p>
                         <p>
-                            Unlike traditional digital marketers who focus only on content or ads, I combine <strong class="text-accent font-normal">strategy, marketing, and automation</strong> to turn leads into predictable revenue.
+                            I help business owners increase sales by building complete, result-driven business growth systems.
                         </p>
                         <p>
-                            Most businesses get leads but fail to convert them into sales because there is no proper follow-up system in place. That's where I step in — I design systems that maximize conversion and increase revenue.
+                            Unlike traditional digital marketers who focus only on ads or content, I combine <strong class="text-accent font-normal">strategy, marketing, and automation</strong> to turn leads into consistent, predictable revenue.
                         </p>
                         <p>
-                            With proven business setup experience, every system I create is tailored to your business, scalable, and results-driven.
+                            Many businesses generate leads but struggle to convert them due to the lack of a structured follow-up system. That's where I step in—bridging the gap between leads and revenue.
                         </p>
                     </div>
 
                     <div class="pt-4 sm:pt-6">
                         <a href="#contact" class="text-txt-main font-bold hover:text-accent transition-colors inline-flex items-center uppercase tracking-widest text-xs sm:text-sm group">
-                            Let's Talk Business <i class="fas fa-long-arrow-alt-right ml-3 text-accent transform group-hover:translate-x-2 transition-transform" aria-hidden="true"></i>
+                            Let's Talk Business <i class="fas fa-long-arrow-alt-right ml-3 text-accent" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -1288,8 +1777,8 @@
     </section>
 
     <!-- Services Overview -->
-    <section id="services" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-page relative fade-up">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-page relative fade-up gradient-overlay-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16">
                 <span class="text-accent font-bold tracking-widest uppercase text-xs stagger-1">Expertise</span>
                 <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-3 mb-4 sm:mb-6 text-txt-main text-glow-strong stagger-2">How I Help You Win</h2>
@@ -1298,32 +1787,35 @@
 
             <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Card 1 -->
-                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border hover:border-accent/30 group shadow-sm stagger-1" style="border-color: rgba(107, 93, 82, 0.25);">
-                    <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 float" aria-hidden="true">
+                <article class="card-hover card-enhanced bg-surface p-6 sm:p-8 lg:p-10 border hover:border-accent/30 group shadow-sm stagger-1" style="border-color: rgba(107, 93, 82, 0.25);">
+                    <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 icon-animate" aria-hidden="true">
                         <i class="fas fa-chess-knight"></i>
                     </div>
                     <h3 class="font-heading text-lg sm:text-xl lg:text-2xl font-bold text-txt-main mb-3 sm:mb-4">Strategic Planning</h3>
-                    <p class="text-txt-sub font-light leading-relaxed text-sm sm:text-base">Tailored roadmaps that align with your business goals, ensuring every marketing effort drives real growth.</p>
+                    <p class="text-txt-sub font-light leading-relaxed text-sm sm:text-base">I create clear business plans based on your goals, so every step you take leads to real growth.</p>
                 </article>
 
                 <!-- Card 2 -->
-                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border-t-4 border-accent hover:border-t-accent shadow-[0_10px_40px_-10px_rgba(107,93,82,0.12)] group stagger-2" style="border-color: rgba(107, 93, 82, 0.25);">
-                    <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 float" aria-hidden="true">
+                <article class="card-hover card-enhanced bg-surface p-6 sm:p-8 lg:p-10 border-t-4 border-accent hover:border-t-accent shadow-[0_10px_40px_-10px_rgba(107,93,82,0.12)] group stagger-2" style="border-color: rgba(107, 93, 82, 0.25);">
+                    <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 icon-animate" aria-hidden="true">
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3 class="font-heading text-lg sm:text-xl lg:text-2xl font-bold text-txt-main mb-3 sm:mb-4">Automation Systems</h3>
-                    <p class="text-txt-sub font-light leading-relaxed text-sm sm:text-base">Building robust follow-up machines that nurture leads automatically, so you never miss a sale.</p>
+                    <p class="text-txt-sub font-light leading-relaxed text-sm sm:text-base">I set up simple follow-up systems that automatically contact your leads, helping you close more sales without manual work.</p>
                 </article>
 
                 <!-- Card 3 -->
-                <article class="card-hover bg-surface p-6 sm:p-8 lg:p-10 border hover:border-accent/30 group shadow-sm stagger-3" style="border-color: rgba(107, 93, 82, 0.25);">
-                    <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 float" aria-hidden="true">
+                <article class="card-hover card-enhanced bg-surface p-6 sm:p-8 lg:p-10 border hover:border-accent/30 group shadow-sm stagger-3" style="border-color: rgba(107, 93, 82, 0.25);">
+                    <div class="text-accent text-2xl sm:text-3xl mb-4 sm:mb-6 icon-animate" aria-hidden="true">
                         <i class="fas fa-chart-pie"></i>
                     </div>
                     <h3 class="font-heading text-lg sm:text-xl lg:text-2xl font-bold text-txt-main mb-3 sm:mb-4">Revenue Optimization</h3>
-                    <p class="text-txt-sub font-light leading-relaxed text-sm sm:text-base">Analyzing data to plug leaks in your funnel and maximize the value of every customer.</p>
+                    <p class="text-txt-sub font-light leading-relaxed text-sm sm:text-base">I find and fix gaps in your sales process so you earn more from the customers you already have.</p>
                 </article>
             </div>
+            
+            <!-- Section Divider -->
+            <div class="section-divider mt-16 sm:mt-20"></div>
         </div>
     </section>
 
@@ -1340,114 +1832,160 @@
                 <div class="w-12 h-0.5 bg-accent mx-auto mt-3 stagger-4"></div>
             </div>
 
-            <!-- Process Steps - Compact Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 max-w-6xl mx-auto">
+            <!-- Timeline -->
+            <div class="timeline-container reveal overflow-hidden">
+                <!-- Vertical Line -->
+                <div class="timeline-line"></div>
+                
+                <!-- Timeline Items -->
                 <!-- Step 1 -->
-                <div class="reveal bg-surface p-5 sm:p-6 border hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1" style="border-color: rgba(107, 93, 82, 0.25);">
-                    <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
-                        <span class="text-txt-muted font-normal mr-2">01.</span>Business Understanding
-                    </h3>
-                    <ul class="space-y-1.5 text-txt-sub font-light text-xs sm:text-sm">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
-                            <span>Analyze Business Model</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
-                            <span>Current Marketing & Sales</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
-                            <span>Clear Growth Goals</span>
-                        </li>
-                    </ul>
+                <div class="timeline-item group">
+                    <div class="hidden md:block w-5/12 text-right pr-8 opacity-40 group-hover:opacity-100 transition-opacity">
+                        <span class="timeline-bg-number">01</span>
+                    </div>
+                    <div class="timeline-marker">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">Business Understanding</h4>
+                        <p class="timeline-description">
+                            We start by analyzing your business model, current marketing & sales processes, and establish clear growth goals. This foundation ensures every strategy is tailored to your unique needs.
+                        </p>
+                        <ul class="mt-3 space-y-1.5 text-txt-sub font-light text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                                <span>Analyze Business Model</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                                <span>Current Marketing & Sales</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                                <span>Clear Growth Goals</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Step 2 -->
-                <div class="reveal bg-surface p-5 sm:p-6 border hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1" style="border-color: rgba(107, 93, 82, 0.25);">
-                    <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
-                        <span class="text-txt-muted font-normal mr-2">02.</span>Strategy & Roadmap
-                    </h3>
-                    <ul class="space-y-1.5 text-txt-sub font-light text-xs sm:text-sm">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
-                            <span>Target Audience & Positioning</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
-                            <span>Right platforms & messaging</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
-                            <span>Lead generation strategy</span>
-                        </li>
-                    </ul>
+                <div class="timeline-item group">
+                    <div class="hidden md:block w-5/12 text-left pl-8 opacity-40 group-hover:opacity-100 transition-opacity">
+                        <span class="timeline-bg-number">02</span>
+                    </div>
+                    <div class="timeline-marker">
+                        <i class="fas fa-pencil-ruler" aria-hidden="true"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">Strategy & Roadmap</h4>
+                        <p class="timeline-description">
+                            We develop a comprehensive strategy identifying your target audience, positioning, and the right platforms & messaging. Then we create a lead generation strategy that aligns with your business objectives.
+                        </p>
+                        <ul class="mt-3 space-y-1.5 text-txt-sub font-light text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                                <span>Target Audience & Positioning</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                                <span>Right platforms & messaging</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                                <span>Lead generation strategy</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Step 3 -->
-                <div class="reveal bg-surface p-5 sm:p-6 border hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-span-1" style="border-color: rgba(107, 93, 82, 0.25);">
-                    <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
-                        <span class="text-txt-muted font-normal mr-2">03.</span>System Implementation
-                    </h3>
-                    <ul class="space-y-1.5 text-txt-sub font-light text-xs sm:text-sm">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
-                            <span>Performance marketing (Meta Ads)</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
-                            <span>Content creation</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
-                            <span>Automation & tracking</span>
-                        </li>
-                    </ul>
+                <div class="timeline-item group">
+                    <div class="hidden md:block w-5/12 text-right pr-8 opacity-40 group-hover:opacity-100 transition-opacity">
+                        <span class="timeline-bg-number">03</span>
+                    </div>
+                    <div class="timeline-marker">
+                        <i class="fas fa-rocket" aria-hidden="true"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">System Implementation</h4>
+                        <p class="timeline-description">
+                            We implement performance marketing campaigns (Meta Ads), create engaging content, and set up automation & tracking systems. Everything is designed to work together seamlessly.
+                        </p>
+                        <ul class="mt-3 space-y-1.5 text-txt-sub font-light text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                                <span>Performance marketing (Meta Ads)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                                <span>Content creation</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                                <span>Automation & tracking</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
-                <!-- Empty spacer for first row on large screens -->
-                <div class="hidden lg:block"></div>
-
                 <!-- Step 4 -->
-                <div class="reveal bg-surface p-5 sm:p-6 border hover:border-accent/30 transition-all duration-300 shadow-sm card-hover lg:col-start-2 lg:col-span-1" style="border-color: rgba(107, 93, 82, 0.25);">
-                    <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
-                        <span class="text-txt-muted font-normal mr-2">04.</span>Conversion Optimization
-                    </h3>
-                    <ul class="space-y-1.5 text-txt-sub font-light text-xs sm:text-sm">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
-                            <span>Lead nurturing process</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
-                            <span>Sales follow-up improvement</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
-                            <span>Continuous optimization</span>
-                        </li>
-                    </ul>
+                <div class="timeline-item group">
+                    <div class="hidden md:block w-5/12 text-left pl-8 opacity-40 group-hover:opacity-100 transition-opacity">
+                        <span class="timeline-bg-number">04</span>
+                    </div>
+                    <div class="timeline-marker">
+                        <i class="fas fa-chart-line" aria-hidden="true"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">Conversion Optimization</h4>
+                        <p class="timeline-description">
+                            We optimize your lead nurturing process and improve sales follow-up systems. Through continuous optimization, we ensure maximum conversion rates from your leads.
+                        </p>
+                        <ul class="mt-3 space-y-1.5 text-txt-sub font-light text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                                <span>Lead nurturing process</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                                <span>Sales follow-up improvement</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                                <span>Continuous optimization</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Step 5 -->
-                <div class="reveal bg-surface p-5 sm:p-6 border hover:border-accent/30 transition-all duration-300 shadow-sm card-hover md:col-span-2 lg:col-span-1 lg:col-start-3" style="border-color: rgba(107, 93, 82, 0.25);">
-                    <h3 class="font-heading text-lg sm:text-xl font-bold text-txt-main mb-3">
-                        <span class="text-txt-muted font-normal mr-2">05.</span>Review & Scale
-                    </h3>
-                    <ul class="space-y-1.5 text-txt-sub font-light text-xs sm:text-sm">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
-                            <span>Weekly/monthly reviews</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
-                            <span>Performance analysis</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
-                            <span>Scaling winning campaigns</span>
-                        </li>
-                    </ul>
+                <div class="timeline-item group">
+                    <div class="hidden md:block w-5/12 text-right pr-8 opacity-40 group-hover:opacity-100 transition-opacity">
+                        <span class="timeline-bg-number">05</span>
+                    </div>
+                    <div class="timeline-marker">
+                        <i class="fas fa-sync-alt" aria-hidden="true"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">Review & Scale</h4>
+                        <p class="timeline-description">
+                            We conduct weekly/monthly reviews, analyze performance data, and scale winning campaigns. This ensures sustainable growth and continuous improvement of your business systems.
+                        </p>
+                        <ul class="mt-3 space-y-1.5 text-txt-sub font-light text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                                <span>Weekly/monthly reviews</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                                <span>Performance analysis</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent mr-2 text-xs" aria-hidden="true"></i>
+                                <span>Scaling winning campaigns</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -1462,13 +2000,59 @@
         </div>
     </section>
 
+    <!-- 3 Simple Steps Section -->
+    <section id="simple-steps" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-page relative fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16">
+                <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 sm:mb-6 text-txt-main text-glow-strong stagger-1">3 Simple Steps to Grow Your Business</h2>
+                <p class="text-txt-sub text-base sm:text-lg font-light stagger-2">
+                    Getting started is easy — and the results speak for themselves.
+                </p>
+                <div class="w-12 h-0.5 bg-accent mx-auto mt-4 stagger-3"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 max-w-6xl mx-auto">
+                <!-- Step 1 -->
+                <div class="reveal bg-surface p-6 sm:p-8 lg:p-10 border hover:border-accent/30 transition-all duration-300 shadow-sm card-hover card-enhanced stagger-1" style="border-color: rgba(107, 93, 82, 0.25);">
+                    <div class="step-number mx-auto">1</div>
+                    <h3 class="font-heading text-xl sm:text-2xl font-bold text-txt-main mb-3 sm:mb-4 text-center">Free Strategy Call</h3>
+                    <p class="text-txt-sub font-light leading-relaxed text-sm sm:text-base text-center">
+                        Tell me about your business goals. In a 30-minute call, I'll understand your challenges and see how I can help you grow.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="reveal bg-surface p-6 sm:p-8 lg:p-10 border-t-4 border-accent hover:border-t-accent hover:border-accent/30 transition-all duration-300 shadow-[0_10px_40px_-10px_rgba(107,93,82,0.12)] card-hover card-enhanced stagger-2" style="border-color: rgba(107, 93, 82, 0.25);">
+                    <div class="step-number mx-auto">2</div>
+                    <h3 class="font-heading text-xl sm:text-2xl font-bold text-txt-main mb-3 sm:mb-4 text-center">Growth Plan</h3>
+                    <p class="text-txt-sub font-light leading-relaxed text-sm sm:text-base text-center">
+                        I analyze your business and create a clear, step-by-step growth plan based on real data and proven methods.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="reveal bg-surface p-6 sm:p-8 lg:p-10 border hover:border-accent/30 transition-all duration-300 shadow-sm card-hover card-enhanced stagger-3" style="border-color: rgba(107, 93, 82, 0.25);">
+                    <div class="step-number mx-auto">3</div>
+                    <h3 class="font-heading text-xl sm:text-2xl font-bold text-txt-main mb-3 sm:mb-4 text-center">Execution & Results</h3>
+                    <p class="text-txt-sub font-light leading-relaxed text-sm sm:text-base text-center">
+                        I help you put the plan into action. You'll start seeing steady growth as your business moves towards its revenue goals.
+                    </p>
+                </div>
+            </div>
+            <!-- Section Divider -->
+            <div class="section-divider mt-12 sm:mt-16"></div>
+        </div>
+    </section>
+
     <!-- Contact CTA Section -->
-    <section id="contact" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-surface2 relative overflow-hidden border-t fade-up" style="border-color: rgba(107, 93, 82, 0.2);">
+    <section id="contact" class="py-12 sm:py-16 md:py-20 lg:py-24 bg-surface2 relative overflow-hidden border-t fade-up diagonal-bg" style="border-color: rgba(107, 93, 82, 0.2);">
         <!-- Abstract Cube Texture -->
         <div class="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <!-- Additional Glow Effect -->
+        <div class="absolute bottom-0 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-accent/6 rounded-full blur-[100px] pointer-events-none ambient-glow-3"></div>
         
         <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
-            <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 sm:mb-8 text-txt-main text-glow stagger-1">Stop Losing Leads Today.</h2>
+            <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 sm:mb-8 text-txt-main stagger-1">Stop Losing Leads Today.</h2>
             <p class="text-txt-sub text-base sm:text-lg mb-8 sm:mb-12 max-w-2xl mx-auto font-light stagger-2">
                 Your business deserves a system that works as hard as you do. Book a consultation and let's map out your growth.
             </p>
@@ -1503,6 +2087,7 @@
             </div>
         </div>
     </footer>
+    </main>
 
     <script>
         // Theme Toggle Functionality
@@ -1591,19 +2176,21 @@
         const menu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
 
-        btn.addEventListener('click', () => {
-            const isHidden = menu.classList.toggle('hidden');
-            const isExpanded = !isHidden;
-            btn.setAttribute('aria-expanded', isExpanded);
-            
-            if (isHidden) {
-                menuIcon.classList.remove('fa-times');
-                menuIcon.classList.add('fa-bars');
-            } else {
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-times');
-            }
-        });
+        if (btn && menu && menuIcon) {
+            btn.addEventListener('click', () => {
+                const isHidden = menu.classList.toggle('hidden');
+                const isExpanded = !isHidden;
+                btn.setAttribute('aria-expanded', isExpanded);
+                
+                if (isHidden) {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                } else {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                }
+            });
+        }
 
         // Smooth Scroll for Anchor Links (using event delegation)
         document.body.addEventListener('click', function(e) {
@@ -1628,8 +2215,8 @@
         
         // Enhanced Scroll Reveal Animation (optimized with IntersectionObserver)
         const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -80px 0px'
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         };
         
         const observer = new IntersectionObserver((entries) => {
@@ -1637,49 +2224,88 @@
                 if (entry.isIntersecting) {
                     const element = entry.target;
                     
-                    // Handle reveal class
-                    if (element.classList.contains('reveal')) {
-                        element.classList.add('active');
+                    // Handle timeline container - animate line only
+                    if (element.classList.contains('timeline-container')) {
+                        element.classList.add('animate');
+                        // Don't unobserve - keep observing for line animation
+                        return;
                     }
                     
-                    // Handle scroll-triggered animation classes
-                    if (element.classList.contains('fade-up')) {
-                        element.classList.add('animate');
-                    } else if (element.classList.contains('fade')) {
-                        element.classList.add('animate');
-                    } else if (element.classList.contains('slide-left')) {
-                        element.classList.add('animate');
-                    } else if (element.classList.contains('slide-right')) {
-                        element.classList.add('animate');
-                    } else if (element.classList.contains('scale-in')) {
-                        element.classList.add('animate');
+                    // Add active class for reveal elements
+                    if (element.classList.contains('reveal')) {
+                        element.classList.add('active', 'animate');
                     }
+                    
+                    // Add animate class for animation classes
+                    const animationClasses = ['fade-up', 'fade', 'slide-left', 'slide-right', 'scale-in', 'image-animate', 'icon-animate', 'card-hover'];
+                    animationClasses.forEach(className => {
+                        if (element.classList.contains(className)) {
+                            element.classList.add('animate');
+                        }
+                    });
                     
                     // Trigger staggered animations for child elements
                     const staggerElements = element.querySelectorAll('[class*="stagger-"]');
                     staggerElements.forEach((el, index) => {
                         setTimeout(() => {
                             el.classList.add('animate');
-                        }, index * 100);
+                        }, index * 100); // Stagger delay
                     });
                     
-                    // Unobserve after animation to improve performance
+                    // Animate child elements with animation classes
+                    const childAnimations = element.querySelectorAll('.fade-up, .slide-left, .slide-right, .scale-in, .image-animate, .icon-animate, .card-hover');
+                    childAnimations.forEach((el, index) => {
+                        setTimeout(() => {
+                            el.classList.add('animate');
+                        }, index * 50);
+                    });
+                    
+                    // Unobserve after processing to improve performance
                     observer.unobserve(element);
                 }
             });
         }, observerOptions);
         
-        // Observe all reveal and animation elements
-        document.querySelectorAll('.reveal, .fade-up, .fade, .slide-left, .slide-right, .scale-in').forEach(el => {
+        // Observe all reveal and animation elements including timeline container
+        document.querySelectorAll('.reveal, .fade-up, .fade, .slide-left, .slide-right, .scale-in, .image-animate, .icon-animate, .card-hover, .timeline-container').forEach(el => {
             observer.observe(el);
         });
+        
+        // Separate observer for timeline items - scroll-based loading
+        const timelineObserverOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animate')) {
+                    // Animate individual timeline item as it scrolls into view
+                    entry.target.classList.add('animate');
+                    // Unobserve after animation to improve performance
+                    timelineObserver.unobserve(entry.target);
+                }
+            });
+        }, timelineObserverOptions);
+        
+        // Observe each timeline item individually for scroll-based loading
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelectorAll('.timeline-item').forEach(item => {
+                    timelineObserver.observe(item);
+                });
+            });
+        } else {
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                timelineObserver.observe(item);
+            });
+        }
         
         // Animate fade elements on page load (for header/nav)
         window.addEventListener('load', () => {
             document.querySelectorAll('.fade').forEach(el => {
-                setTimeout(() => {
-                    el.classList.add('animate');
-                }, 100);
+                el.classList.add('animate');
             });
         });
         
@@ -1707,12 +2333,14 @@
         // Navbar Scroll Effect (debounced for performance)
         const handleScroll = debounce(() => {
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 20) {
-                navbar.classList.add('shadow-md', 'bg-page/98');
-                navbar.classList.remove('bg-page/95');
-            } else {
-                navbar.classList.remove('shadow-md', 'bg-page/98');
-                navbar.classList.add('bg-page/95');
+            if (navbar) {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('shadow-md', 'bg-page/98');
+                    navbar.classList.remove('bg-page/95');
+                } else {
+                    navbar.classList.remove('shadow-md', 'bg-page/98');
+                    navbar.classList.add('bg-page/95');
+                }
             }
         }, 10);
         
@@ -1720,7 +2348,8 @@
         
         // Close mobile menu when clicking outside (optimized)
         document.addEventListener('click', (e) => {
-            if (!menu.classList.contains('hidden') && 
+            if (menu && btn && menuIcon && 
+                !menu.classList.contains('hidden') && 
                 !menu.contains(e.target) && 
                 !btn.contains(e.target)) {
                 menu.classList.add('hidden');
@@ -1730,16 +2359,18 @@
             }
         });
         
-        // Preload critical images
+        // Preload critical images (optimized)
         if ('requestIdleCallback' in window) {
             requestIdleCallback(() => {
-                const criticalImages = document.querySelectorAll('img[loading="lazy"]');
-                criticalImages.forEach(img => {
-                    if (img.dataset.src) {
+                const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+                lazyImages.forEach(img => {
+                    // Preload images that are near viewport
+                    if (img.dataset.src && img.getBoundingClientRect().top < window.innerHeight * 2) {
                         img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
                     }
                 });
-            });
+            }, { timeout: 2000 });
         }
     </script>
 </body>
